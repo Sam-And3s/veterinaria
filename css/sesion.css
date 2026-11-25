@@ -1,0 +1,783 @@
+/* Definición de variables CSS globales para el tema de colores y estilos */
+
+/* Reseteo global de estilos para todos los elementos */
+* {
+    /* Elimina los márgenes predeterminados */
+    margin: 0;
+    /* Elimina los rellenos predeterminados */
+    padding: 0;
+    /* Asegura que el padding y border no aumenten el tamaño total */
+    box-sizing: border-box;
+    /* Establece la fuente predeterminada para toda la página */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Contenedor principal que divide la página en dos columnas iguales */
+.container {
+    /* Establece el diseño en cuadrícula */
+    display: grid;
+    /* Divide el contenedor en dos columnas de igual tamaño */
+    grid-template-columns: 1fr 1fr;
+    /* Ocupa el 100% de la altura de la ventana */
+    height: 100vh;
+    /* Evita las barras de desplazamiento */
+    overflow: hidden;
+}
+
+/* Sección izquierda - Contiene la imagen y mensaje de bienvenida */
+.left-side {
+    /* Crea un degradado diagonal entre los colores primario y secundario */
+    background: linear-gradient(135deg, #7DD181, #DEF8EA);
+    /* Añade espacio interno de 3rem en todos los lados */
+    padding: 3rem;
+    /* Configura el contenedor como flexbox */
+    display: flex;
+    /* Organiza los elementos en columna */
+    flex-direction: column;
+    /* Centra verticalmente el contenido */
+    justify-content: center;
+    /* Ocupa toda la altura disponible */
+    height: 100%;
+}
+
+/* Contenedor del texto de bienvenida */
+.content {
+    /* Establece el color del texto a blanco */
+    color: #235610;
+    /* Añade espacio inferior de 2rem */
+    margin-bottom: 2rem;
+}
+
+/* Estilo del título principal */
+.content h1 {
+    /* Tamaño de fuente grande */
+    font-size: 2.5rem;
+    /* Espacio inferior de 1rem */
+    margin-bottom: 1rem;
+    /* Peso de fuente semi-negrita */
+    font-weight: 600;
+}
+
+/* Estilo del párrafo de bienvenida */
+.content p {
+    /* Tamaño de fuente para texto regular */
+    font-size: 1.1rem;
+    /* Ligera transparencia para contraste visual */
+    opacity: 0.9;
+}
+
+/* Contenedor de la imagen principal */
+.image-container {
+    /* Limita el ancho máximo de la imagen */
+    max-width: 1500px;
+    /* Centra horizontalmente el contenedor */
+    margin: 0;
+}
+
+/* Estilo de la imagen dentro del contenedor */
+.image-container img {
+    /* Ocupa todo el ancho disponible */
+    width: 100%;
+    /* Mantiene la proporción de la imagen */
+    height: auto;
+    /* Elimina espacios extra debajo de la imagen */
+    display: block;
+}
+
+/* Sección derecha - Contiene los formularios */
+.right-side {
+    /* Espaciado interno de 2rem en todos los lados */
+    padding: 2rem;
+    /* Configura el contenedor como flexbox */
+    display: flex;
+    /* Organiza los elementos en columna */
+    flex-direction: column;
+    /* Centra los elementos horizontalmente */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    justify-content: center;
+    /* Permite posicionar elementos absolutos dentro */
+    position: relative;
+    /* Ocupa toda la altura disponible */
+    height: 100%;
+    background: #DEF8EA;
+}
+
+/* Estilo del logotipo */
+.logo {
+    /* Posicionamiento absoluto respecto al contenedor */
+    position: absolute;
+    /* Distancia desde arriba */
+    top: 2rem;
+    /* Distancia desde la derecha */
+    right: 2rem;
+    /* Altura fija del logo */
+    height: 35px;
+    /* Ancho automático para mantener proporción */
+    width: auto;
+}
+
+/* Contenedor de formularios */
+.form-container {
+    /* Ocupa todo el ancho disponible */
+    width: 100%;
+    /* Limita el ancho máximo para mejor legibilidad */
+    max-width: 400px;
+    /* Espaciado horizontal */
+    padding: 0 2rem;
+    color: #235610;
+}
+
+/* Selector de tipo de formulario (Login/Registro) */
+.form-selector {
+    /* Configura como flexbox */
+    display: flex;
+    /* Espacio entre botones */
+    gap: 1rem;
+    /* Espacio inferior */
+    margin-bottom: 2rem;
+    /* Color de fondo claro */
+    background: #7DD181;
+    /* Espaciado interno */
+    padding: 0.5rem;
+    /* Bordes redondeados */
+    border-radius: 10px;
+}
+
+/* Botones selectores de formulario */
+.selector-btn {
+    /* Distribuye el espacio equitativamente */
+    flex: 1;
+    /* Espaciado interno */
+    padding: 0.75rem;
+    /* Sin bordes */
+    /* border: none; */ /* Eliminado para usar el nuevo borde */
+    /* Fondo transparente */
+    /* background: #235610; */ /* Cambiado */
+    /* Color de texto */
+    /* color: #DEF8EA; */ /* Cambiado */
+    background: var(--primary-color); /* #DEF8EA */
+    color: var(--text-dark); /* #235610 */
+    border: 1px solid var(--text-light); /* #7DD181 */
+    /* Tamaño de fuente */
+    font-size: 1rem;
+    /* Cursor tipo puntero */
+    cursor: pointer;
+    /* Bordes redondeados */
+    border-radius: 8px;
+    /* Animación suave */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Para el efecto de ondas */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de onda al hacer hover en los botones */
+.selector-btn::before {
+    /* Elemento pseudo para la animación */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    /* Color de la onda con transparencia */
+    background: rgba(192, 132, 252, 0.1);
+    border-radius: 50%;
+    /* Centra la onda */
+    transform: translate(-50%, -50%);
+    /* Animación de expansión */
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+/* Expande la onda al hacer hover */
+.selector-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Efecto al hacer hover en los botones */
+.selector-btn:hover {
+    /* Cambia el color del texto */
+    color: #DEF8EA;
+    /* Eleva ligeramente el botón */
+    transform: translateY(-2px);
+}
+
+/* Mejoras en los inputs */
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: var(--text-dark); /* #235610 */
+    background-color: var(--white); /* #FFFFFF */
+    border: 1px solid var(--text-light); /* #7DD181 */
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* background-clip: padding-box; */ /* Opcional, puede no ser necesario */
+}
+
+/* Estilo para el placeholder de los inputs */
+.input-group input::placeholder {
+    color: var(--text-light); /* #7DD181 */
+    opacity: 0.8;
+}
+
+/* Efecto de borde brillante al enfocar campos de entrada */
+.input-group::before {
+    /* Crea un elemento pseudo */
+    content: '';
+    /* Posicionamiento absoluto respecto al contenedor */
+    position: absolute;
+    /* Extiende el elemento 2px en todas las direcciones */
+    inset: -2px;
+    /* Crea un degradado horizontal con los colores del tema */
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    /* Bordes redondeados */
+    border-radius: 10px;
+    /* Coloca el elemento detrás del input */
+    z-index: -1;
+    /* Inicialmente invisible */
+    opacity: 0;
+    /* Transición suave para la opacidad */
+    transition: opacity 0.3s ease;
+}
+
+/* Muestra el borde brillante cuando el input está enfocado */
+.input-group:focus-within::before {
+    /* Hace visible el borde con transparencia */
+    opacity: 0.2;
+}
+
+/* Estilo base de los campos de entrada */
+.input-group input {
+    /* Borde transparente para el efecto de brillo */
+    border: 2px solid transparent;
+    /* Evita que el fondo se extienda bajo el borde */
+    background-clip: padding-box;
+}
+
+/* Contenedor para efectos de partículas decorativas */
+.floating-particles {
+    /* Posicionamiento absoluto en el contenedor */
+    position: absolute;
+    /* Ocupa todo el espacio disponible */
+    width: 100%;
+    height: 100%;
+    /* Evita que interfiera con interacciones */
+    pointer-events: none;
+    /* Coloca el elemento detrás del contenido */
+    z-index: 0;
+}
+
+/* Efecto hover en campos de entrada */
+.input-group input:hover {
+    /* Añade un sutil fondo al pasar el mouse */
+    background: rgba(192, 132, 252, 0.05);
+}
+
+/* Efecto al enfocar campos de entrada */
+.input-group input:focus {
+    border-color: var(--text-dark); /* #235610 */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(35, 86, 16, 0.25); /* Sombra de foco con --text-dark */
+    /* transform: translateY(-2px); */ /* Puedes mantener o ajustar esto */
+    /* box-shadow: 0 4px 20px rgba(192, 132, 252, 0.15); */ /* Reemplazado por un box-shadow más temático */
+}
+
+/* Botón para mostrar/ocultar contraseña */
+.toggle-password {
+    /* Transición suave para todos los cambios */
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en el botón de contraseña */
+.toggle-password:hover {
+    /* Cambia el color al primario */
+    color: var(--primary);
+    /* Escala y rota ligeramente el icono */
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Selector de roles - Animación base */
+.role-select {
+    /* Transición suave con curva personalizada */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efecto hover en el selector de roles */
+.role-select:hover {
+    /* Añade un fondo sutil */
+    background: rgba(192, 132, 252, 0.05);
+    /* Eleva ligeramente el selector */
+    transform: translateY(-1px);
+}
+
+/* Efecto al enfocar el selector de roles */
+.role-select:focus {
+    /* Eleva más el selector */
+    transform: translateY(-2px);
+    /* Añade una sombra suave */
+    box-shadow: 0 4px 20px rgba(192, 132, 252, 0.15);
+}
+
+/* Animación para el botón de Google */
+.google-btn {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo deslizante para el botón de Google */
+.google-btn::before {
+    /* Crea un elemento pseudo para la animación */
+    content: '';
+    /* Posicionamiento absoluto dentro del botón */
+    position: absolute;
+    /* Se alinea con la parte superior */
+    top: 0;
+    /* Comienza fuera del botón a la izquierda */
+    left: -100%;
+    /* Ocupa todo el espacio del botón */
+    width: 100%;
+    height: 100%;
+    /* Degradado horizontal con transparencia */
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(192, 132, 252, 0.1),
+            transparent);
+    /* Duración de la animación */
+    transition: 0.5s;
+}
+
+/* Animación del brillo al hacer hover */
+.google-btn:hover::before {
+    /* Mueve el brillo hacia la derecha */
+    left: 100%;
+}
+
+/* Efectos adicionales al hacer hover en el botón */
+.google-btn:hover {
+    /* Eleva ligeramente el botón */
+    transform: translateY(-2px);
+    /* Añade sombra suave */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Rotación del icono de Google al hover */
+.google-btn:hover i {
+    /* Gira el icono 360 grados */
+    transform: rotate(360deg);
+    /* Duración de la rotación */
+    transition: transform 0.6s ease;
+}
+
+/* Estilo del botón selector cuando está activo */
+.selector-btn.active {
+    background: #235610;
+    color: #DEF8EA;
+    border-color: #235610;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para el botón de envío principal del formulario */
+.form-container button[type="submit"] {
+    width: 100%;
+    padding: 0.85rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #235610;
+    color: #DEF8EA;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem; /* Espacio arriba del botón */
+    text-transform: uppercase;
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: #1A4301; /* Un verde oscuro ligeramente más intenso */
+    transform: translateY(-2px);
+}
+
+/* Estado inicial del formulario */
+.form {
+    /* Oculta el formulario */
+    display: none;
+    /* Transparente */
+    opacity: 0;
+    /* Desplazado hacia arriba */
+    transform: translateY(10px);
+    /* Transición suave */
+    transition: all 0.3s ease;
+}
+
+/* Estado del formulario cuando está activo */
+.form.active {
+    /* Muestra el formulario */
+    display: block;
+    /* Totalmente visible */
+    opacity: 1;
+    /* En su posición normal */
+    transform: translateY(0);
+}
+
+/* Espaciado entre grupos de inputs */
+.input-group {
+    /* Margen inferior */
+    margin-bottom: 1.25rem;
+    /* Para posicionamiento de elementos internos */
+    position: relative;
+}
+
+/* Estilos del selector de roles */
+.role-select {
+    /* Ocupa todo el ancho disponible */
+    width: 100%;
+    padding: 1rem;
+    background: #DEF8EA;
+    border: 1px solid #7DD181;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #235610;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Estado de foco del selector de roles */
+.role-select:focus {
+    /* Elimina el borde predeterminado */
+    outline: none;
+    /* Borde del color primario */
+    border-color: #7DD181;
+    /* Fondo blanco */
+    background: var(--white);
+    /* Resplandor suave */
+    box-shadow: 0 0 0 4px rgba(192, 132, 252, 0.1);
+}
+
+/* Transición para las credenciales de administrador */
+.admin-credentials {
+    /* Animación suave */
+    transition: all 0.3s ease;
+}
+
+/* Estilos base para los campos de entrada */
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    background: #DEF8EA;
+    border: 1px solid #7DD181;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #235610;
+    transition: all 0.3s ease;
+}
+
+/* Estado de foco de los campos de entrada */
+.input-group input:focus {
+    outline: none;
+    border-color: #7DD181;
+    background: #DEF8EA;
+    box-shadow: 0 0 0 4px rgba(192, 132, 252, 0.1);
+}
+
+/* Estilo del texto placeholder */
+.input-group input::placeholder {
+    /* Color de texto claro */
+    color: #235610;
+}
+
+/* Estilos del botón de envío */
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #7DD181;
+    color: #DEF8EA;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 1.5rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover del botón de envío */
+.submit-btn:hover {
+    /* Cambia al color primario más oscuro */
+    background: #235610;
+    /* Eleva el botón */
+    transform: translateY(-2px);
+    /* Sombra más pronunciada */
+    box-shadow: 0 8px 15px rgba(192, 132, 252, 0.2);
+}
+
+/* Estilo del divisor entre opciones de inicio de sesión */
+.divider {
+    /* Espaciado vertical */
+    margin: 1.5rem 0;
+    /* Centra el texto "o" */
+    text-align: center;
+    /* Para posicionar las líneas */
+    position: relative;
+}
+
+/* Líneas decorativas antes y después del texto */
+.divider::before,
+.divider::after {
+    /* Crea los elementos de línea */
+    content: '';
+    /* Posicionamiento absoluto */
+    position: absolute;
+    /* Centra verticalmente */
+    top: 50%;
+    /* Ancho de cada línea */
+    width: 45%;
+    /* Grosor de la línea */
+    height: 1px;
+    /* Color gris claro */
+    background: #E5E7EB;
+}
+
+/* Línea izquierda */
+.divider::before {
+    /* Posiciona al inicio */
+    left: 0;
+}
+
+/* Línea derecha */
+.divider::after {
+    /* Posiciona al final */
+    right: 0;
+}
+
+/* Texto del divisor */
+.divider span {
+    /* Fondo blanco para cubrir las líneas */
+    background: var(--white);
+    /* Espacio alrededor del texto */
+    padding: 0 1rem;
+    /* Color de texto claro */
+    color: var(--text-light);
+    /* Tamaño de fuente pequeño */
+    font-size: 0.9rem;
+}
+
+/* Estilos del botón de Google */
+.google-btn {
+    /* Ocupa todo el ancho disponible */
+    width: 100%;
+    /* Espaciado interno */
+    padding: 1rem;
+    /* Fondo blanco */
+    background: var(--white);
+    /* Borde sutil */
+    border: 1px solid #E5E7EB;
+    /* Bordes redondeados */
+    border-radius: 8px;
+    /* Configuración flexbox para centrar contenido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Espacio entre icono y texto */
+    gap: 0.8rem;
+    /* Tamaño de texto */
+    font-size: 0.95rem;
+    /* Color de texto */
+    color: var(--text-dark);
+    /* Cursor tipo puntero */
+    cursor: pointer;
+    /* Transición suave */
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover del botón de Google */
+.google-btn:hover {
+    /* Cambia el fondo a gris claro */
+    background: var(--bg-light);
+    /* Eleva ligeramente el botón */
+    transform: translateY(-2px);
+}
+
+/* Icono de Google */
+.google-btn i {
+    /* Tamaño del icono */
+    font-size: 1.2rem;
+    /* Color del icono */
+    color: var(--primary);
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ajusta el contenedor principal */
+    .container {
+        /* Cambia a una sola columna */
+        grid-template-columns: 1fr;
+    }
+
+    /* Oculta el lado izquierdo */
+    .left-side {
+        display: none;
+    }
+
+    /* Ajusta el espaciado del lado derecho */
+    .right-side {
+        padding: 1.5rem;
+    }
+
+    /* Reduce el padding del contenedor de formularios */
+    .form-container {
+        padding: 0 1rem;
+    }
+}
+
+.form-container {
+    max-height: 100vh; /* Asegura que no exceda la altura de la ventana */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    padding: 20px; /* Opcional: agrega espacio interno */
+}
+
+.right-side {
+    height: auto; /* Ajusta la altura automáticamente */
+    min-height: 100vh; /* Asegura que ocupe al menos toda la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+}
+
+@media (max-width: 768px) {
+    .right-side {
+        padding: 10px;
+        overflow-y: auto; /* Permite desplazamiento en pantallas pequeñas */
+    }
+
+    .form-container {
+        max-height: 80vh; /* Limita la altura del formulario */
+    }
+}
+
+.form-container {
+    background: rgba(222, 248, 234, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(35, 86, 16, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(125, 209, 129, 0.3);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group input,
+.input-group select,
+.role-select {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #7DD181;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #235610;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(125, 209, 129, 0.1);
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.role-select:focus {
+    border-color: #235610;
+    box-shadow: 0 0 0 4px rgba(35, 86, 16, 0.1);
+    transform: translateY(-2px);
+}
+
+.input-group::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #7DD181, #235610);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.input-group:focus-within::before {
+    opacity: 1;
+}
+
+.selector-btn {
+    position: relative;
+    overflow: hidden;
+    background: #DEF8EA;
+    border: 2px solid #7DD181;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    color: #235610;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(125, 209, 129, 0.1);
+}
+
+.selector-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(35, 86, 16, 0.15);
+}
+
+.selector-btn.active {
+    background: #235610;
+    color: #DEF8EA;
+    border-color: #235610;
+    box-shadow: 0 4px 15px rgba(35, 86, 16, 0.2);
+}
+
+.form-container button[type="submit"] {
+    background: linear-gradient(45deg, #235610, #2f7016);
+    border: none;
+    padding: 1rem 2rem;
+    color: #DEF8EA;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(35, 86, 16, 0.2);
+    transition: all 0.3s ease;
+}
+
+.form-container button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(35, 86, 16, 0.25);
+    background: linear-gradient(45deg, #2f7016, #235610);
+}
+
+/* Efecto de brillo en hover */
+.input-group input:hover,
+.role-select:hover {
+    border-color: #7DD181;
+    box-shadow: 0 4px 15px rgba(125, 209, 129, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Animación suave para los formularios */
+.form {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.form:not(.active) {
+    transform: scale(0.95);
+    opacity: 0;
+}

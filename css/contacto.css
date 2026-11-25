@@ -1,0 +1,917 @@
+/* Sección Hero - Contenedor principal */
+.contact-hero {
+    height: 85vh;                    /* Altura del 85% de la ventana visible */
+    display: grid;                   /* Usa diseño de cuadrícula CSS */
+    grid-template-columns: 1fr 1fr;  /* Divide en dos columnas iguales */
+    gap: 2rem;                      /* Espacio entre columnas */
+    padding: 0 5%;                  /* Relleno horizontal */
+    background: #f8f9ff;            /* Fondo gris azulado claro */
+}
+
+/* Estilos del contenido izquierdo */
+.hero-content {
+    display: flex;                  /* Usa diseño flexible */
+    flex-direction: column;         /* Apila elementos verticalmente */
+    justify-content: center;        /* Centra contenido verticalmente */
+    padding-right: 2rem;           /* Relleno derecho */
+}
+
+/* Estilos del título principal */
+.hero-content h1 {
+    font-size: 3.5rem;             /* Tamaño grande de texto */
+    color: #235610;                   /* Color gris oscuro */
+    margin-bottom: 1rem;           /* Espacio inferior */
+    animation: fadeInLeft 1s ease;  /* Animación de entrada desde la izquierda */
+}
+
+/* Estilos del párrafo */
+.hero-content p {
+    font-size: 1.2rem;             /* Tamaño medio de texto */
+    color: #161616;                   /* Color gris medio */
+    animation: fadeInLeft 1s ease 0.2s; /* Animación con retraso */
+    opacity: 0;                    /* Inicialmente invisible */
+    animation-fill-mode: forwards;  /* Mantiene estado final de animación */
+}
+
+/* Contenedor de la imagen derecha */
+.hero-image {
+    position: relative;            /* Para posicionamiento de elementos hijos */
+    display: flex;                 /* Usa diseño flexible */
+    align-items: center;           /* Centra contenido verticalmente */
+    justify-content: center;       /* Centra contenido horizontalmente */
+}
+
+/* Estilos de la imagen */
+.hero-image img {
+    width: 90%;                    /* Ancho del 90% del contenedor */
+    height: 90%;                   /* Alto del 90% del contenedor */
+    object-fit: cover;             /* Ajusta imagen manteniendo proporción */
+    border-radius: 20px;           /* Bordes redondeados */
+    animation: fadeIn 1s ease;     /* Animación de aparición suave */
+}
+
+/* Estilos de la tarjeta flotante que aparece sobre la imagen */
+.floating-card {
+    position: absolute;            /* Posicionamiento absoluto respecto al contenedor */
+    bottom: 30px;                 /* Distancia desde el borde inferior */
+    right: 30px;                  /* Distancia desde el borde derecho */
+    background: white;            /* Fondo blanco */
+    padding: 1rem 2rem;           /* Relleno interno (1rem arriba/abajo, 2rem izquierda/derecha) */
+    border-radius: 15px;          /* Bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    display: flex;                /* Diseño flexible para alinear contenido */
+    align-items: center;          /* Centra elementos verticalmente */
+    gap: 1rem;                    /* Espacio entre elementos internos */
+    animation: float 3s ease-in-out infinite;  /* Animación flotante continua */
+}
+
+/* Estilos del ícono dentro de la tarjeta flotante */
+.floating-card i {
+    font-size: 1.5rem;           /* Tamaño del ícono */
+    color: #C084FC;              /* Color morado del ícono */
+}
+
+/* Sección de Redes Sociales - Contenedor principal */
+.social-section {
+    padding: 6rem 5%;                /* Relleno superior/inferior y horizontal */
+    background: white;               /* Fondo blanco */
+}
+
+/* Encabezado de la sección */
+.section-header {
+    text-align: center;              /* Centra el texto */
+    margin-bottom: 4rem;             /* Espacio inferior */
+}
+
+.section-header h2 {
+    font-size: 2.5rem;               /* Tamaño grande del título */
+    color: #235610;                     /* Color gris oscuro */
+    margin-bottom: 1rem;             /* Espacio inferior */
+}
+
+.section-header p {
+    color: #161616;                     /* Color gris medio */
+    font-size: 1.1rem;               /* Tamaño del texto */
+}
+
+/* Cuadrícula para las redes sociales */
+.social-grid {
+    display: grid;                   /* Diseño en cuadrícula */
+    grid-template-columns: repeat(3, 1fr);  /* 3 columnas iguales */
+    gap: 2rem;                       /* Espacio entre elementos */
+    max-width: 1200px;               /* Ancho máximo */
+    margin: 0 auto;                  /* Centrado horizontal */
+}
+
+/* Columna individual de red social */
+.social-column {
+    display: flex;                   /* Diseño flexible */
+    flex-direction: column;          /* Apilado vertical */
+    gap: 1.5rem;                     /* Espacio entre elementos */
+}
+
+/* Carrusel de redes sociales */
+.social-carousel {
+    background: white;               /* Fondo blanco */
+    border-radius: 20px;             /* Bordes redondeados */
+    padding: 1rem;                   /* Relleno interno */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    overflow: hidden;                /* Oculta contenido desbordado */
+}
+
+/* Estilos específicos para cada red social */
+.facebook-frame {
+    border: 2px solid #1877f2;       /* Borde azul de Facebook */
+    background: linear-gradient(white, #f0f2f5);  /* Degradado de fondo */
+}
+
+.instagram-frame {
+    border: 2px solid #e4405f;       /* Borde rosa de Instagram */
+    background: linear-gradient(45deg, #fdf497, #fd5949, #d6249f, #285AEB);  /* Degradado característico */
+    background-clip: padding-box;     /* Ajuste del fondo */
+}
+
+.tiktok-frame {
+    border: 2px solid #000;          /* Borde negro de TikTok */
+    background: linear-gradient(white, #f8f8f8);  /* Degradado sutil */
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    position: relative;              /* Para posicionamiento absoluto de slides */
+    height: 300px;                   /* Altura fija */
+    overflow: hidden;                /* Oculta contenido desbordado */
+}
+
+/* Diapositivas del carrusel */
+.carousel-slide {
+    position: absolute;              /* Posicionamiento absoluto */
+    width: 100%;                     /* Ancho completo */
+    height: 100%;                    /* Alto completo */
+    opacity: 0;                      /* Inicialmente invisible */
+    transition: opacity 0.5s ease-in-out;  /* Transición suave */
+}
+
+.carousel-slide.active {
+    opacity: 1;                      /* Slide activa visible */
+}
+
+/* Imágenes dentro del carrusel */
+.carousel-slide img {
+    width: 100%;                     /* Ancho completo */
+    height: 100%;                    /* Alto completo */
+    object-fit: cover;               /* Ajuste de imagen */
+    border-radius: 15px;             /* Bordes redondeados */
+}
+
+/* Superposición de texto */
+.post-overlay {
+    position: absolute;              /* Posicionamiento absoluto */
+    bottom: 0;                       /* Pegado al fondo */
+    left: 0; right: 0;              /* Extendido horizontalmente */
+    padding: 1rem;                   /* Relleno interno */
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));  /* Degradado oscuro */
+    color: white;                    /* Texto blanco */
+    border-radius: 0 0 15px 15px;    /* Bordes redondeados inferiores */
+}
+
+/* Puntos de navegación */
+.carousel-dots {
+    display: flex;                   /* Diseño flexible */
+    justify-content: center;         /* Centrado horizontal */
+    gap: 0.5rem;                     /* Espacio entre puntos */
+    margin-top: 1rem;               /* Espacio superior */
+}
+
+.dot {
+    width: 8px;                      /* Ancho del punto */
+    height: 8px;                     /* Alto del punto */
+    border-radius: 50%;              /* Forma circular */
+    background: #ddd;                /* Color gris claro */
+    cursor: pointer;                 /* Cursor tipo puntero */
+    transition: background 0.3s ease; /* Transición suave */
+}
+
+.dot.active {
+    background: #C084FC;             /* Color morado para punto activo */
+}
+
+/* Decoración de huella de mascota */
+.social-carousel::before {
+    content: '';                     /* Contenido vacío para pseudo-elemento */
+    position: absolute;              /* Posicionamiento absoluto */
+    top: -10px; left: 20px;         /* Posición */
+    width: 20px; height: 20px;      /* Dimensiones */
+    background: url('assets/paw-print.svg') no-repeat center;  /* Imagen de huella */
+    opacity: 0.2;                    /* Transparencia */
+}
+
+/* Diseño responsivo - Pantallas medianas */
+@media (max-width: 1024px) {
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);  /* Cambia a 2 columnas en pantallas de hasta 1024px */
+    }
+}
+
+/* Diseño responsivo - Pantallas pequeñas */
+@media (max-width: 768px) {
+    .social-grid {
+        grid-template-columns: 1fr;  /* Cambia a 1 columna en pantallas de hasta 768px */
+    }
+}
+/* Estilos base para las tarjetas de redes sociales */
+.social-card {
+    background: #f8f9ff;             /* Fondo gris muy claro */
+    padding: 2rem;                   /* Relleno interno */
+    border-radius: 20px;             /* Bordes redondeados */
+    text-align: center;              /* Texto centrado */
+    transition: all 0.3s ease;       /* Transición suave para todos los cambios */
+    text-decoration: none;           /* Elimina subrayado de enlaces */
+    border: 2px solid transparent;   /* Borde transparente inicial */
+}
+
+/* Estilos para los íconos dentro de las tarjetas */
+.social-card i {
+    font-size: 3rem;                 /* Tamaño grande para íconos */
+    margin-bottom: 1rem;             /* Espacio inferior */
+    transition: all 0.3s ease;       /* Transición suave para cambios */
+}
+
+/* Estilos para los títulos de las tarjetas */
+.social-card h3 {
+    color: #333;                     /* Color gris oscuro */
+    margin-bottom: 0.5rem;           /* Espacio inferior */
+    transition: color 0.3s ease;     /* Transición suave para color */
+}
+
+/* Estilos para los párrafos de las tarjetas */
+.social-card p {
+    color: #666;                     /* Color gris medio */
+    transition: color 0.3s ease;     /* Transición suave para color */
+}
+
+/* Efectos al pasar el mouse sobre Facebook */
+.facebook:hover {
+    background: #1877f2;             /* Color azul de Facebook */
+    transform: translateY(-10px);     /* Eleva la tarjeta 10px */
+    box-shadow: 0 10px 20px rgba(24, 119, 242, 0.2);  /* Sombra azul suave */
+}
+
+/* Cambia el color del texto e ícono de Facebook al hover */
+.facebook:hover i,
+.facebook:hover h3,
+.facebook:hover p {
+    color: white;                    /* Todo el texto se vuelve blanco */
+}
+
+/* Efectos al pasar el mouse sobre Instagram */
+.instagram:hover {
+    background: linear-gradient(45deg, #fdf497, #fd5949, #d6249f, #285AEB);  /* Degradado característico de Instagram */
+    transform: translateY(-10px);     /* Eleva la tarjeta 10px */
+    box-shadow: 0 10px 20px rgba(214, 36, 159, 0.2);  /* Sombra rosa suave */
+}
+
+/* Cambia el color del texto e ícono de Instagram al hover */
+.instagram:hover i,
+.instagram:hover h3,
+.instagram:hover p {
+    color: white;                    /* Todo el texto se vuelve blanco */
+}
+
+/* Efectos al pasar el mouse sobre TikTok */
+.tiktok:hover {
+    background: #000000;             /* Fondo negro característico */
+    transform: translateY(-10px);     /* Eleva la tarjeta 10px */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);  /* Sombra negra suave */
+}
+
+/* Cambia el color del texto e ícono de TikTok al hover */
+.tiktok:hover i,
+.tiktok:hover h3,
+.tiktok:hover p {
+    color: white;                    /* Todo el texto se vuelve blanco */
+}
+
+/* Efecto general para todas las tarjetas sociales */
+.social-card:hover {
+    transform: translateY(-10px);     /* Eleva la tarjeta 10px */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  /* Sombra general */
+}
+
+/* Colores de íconos por defecto */
+.facebook i {
+    color: #1877f2;                  /* Azul de Facebook */
+}
+
+.instagram i {
+    color: #e4405f;                  /* Rosa de Instagram */
+}
+
+.tiktok i {
+    color: #000000;                  /* Negro de TikTok */
+}
+
+/* Sección de información de contacto - Contenedor principal */
+.contact-info {
+    padding: 6rem 5%;                /* Relleno superior/inferior y horizontal */
+    background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);  /* Degradado de fondo */
+    position: relative;              /* Para elementos posicionados absolutamente */
+    overflow: hidden;                /* Oculta contenido desbordado */
+}
+
+/* Contenedor de la cuadrícula de contacto */
+.contact-container {
+    display: grid;                   /* Diseño en cuadrícula */
+    grid-template-columns: 0.8fr 1.2fr;  /* Columna izquierda más pequeña que la derecha */
+    gap: 3rem;                       /* Espacio entre columnas */
+    max-width: 1200px;               /* Ancho máximo */
+    margin: 0 auto;                  /* Centrado horizontal */
+}
+
+/* Carrusel de instalaciones */
+.facilities-carousel {
+    margin-bottom: 3rem;             /* Espacio inferior */
+    position: relative;              /* Para elementos posicionados absolutamente */
+    border-radius: 20px;             /* Bordes redondeados */
+    overflow: hidden;                /* Oculta contenido desbordado */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
+/* Contenedor del carrusel Swiper */
+.facilities-swiper {
+    width: 100%;                     /* Ancho completo */
+    height: 500px;                   /* Altura fija */
+}
+
+/* Diapositivas del carrusel */
+.facilities-swiper .swiper-slide {
+    position: relative;              /* Para elementos posicionados absolutamente */
+    overflow: hidden;                /* Oculta contenido desbordado */
+}
+
+/* Imágenes dentro del carrusel */
+.facilities-swiper img {
+    width: 100%;                     /* Ancho completo */
+    height: 100%;                    /* Alto completo */
+    object-fit: cover;               /* Ajuste de imagen */
+    transition: transform 0.5s ease;  /* Transición suave para zoom */
+}
+
+/* Efecto hover en las imágenes */
+.facilities-swiper .swiper-slide:hover img {
+    transform: scale(1.05);          /* Zoom suave al pasar el mouse */
+}
+
+/* Información de la instalación */
+.facility-info {
+    position: absolute;              /* Posicionamiento absoluto */
+    bottom: 0; left: 0; right: 0;    /* Pegado al fondo y extendido */
+    padding: 2rem;                   /* Relleno interno */
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));  /* Degradado oscuro */
+    color: white;                    /* Texto blanco */
+    transform: translateY(100%);      /* Inicialmente oculto abajo */
+    transition: transform 0.3s ease;  /* Transición suave */
+}
+
+/* Efecto hover en la información */
+.facilities-swiper .swiper-slide:hover .facility-info {
+    transform: translateY(0);         /* Muestra la información al pasar el mouse */
+}
+
+/* Título de la información */
+.facility-info h3 {
+    font-size: 1.5rem;               /* Tamaño grande de texto */
+    margin-bottom: 0.5rem;           /* Espacio inferior */
+}
+
+/* Botones de navegación del carrusel */
+.facilities-swiper .swiper-button-next,
+.facilities-swiper .swiper-button-prev {
+    color: white;                    /* Color blanco */
+    background: rgba(192, 132, 252, 0.8);  /* Fondo morado semitransparente */
+    width: 40px;                     /* Ancho fijo */
+    height: 40px;                    /* Alto fijo */
+    border-radius: 50%;              /* Forma circular */
+}
+
+/* Íconos de los botones de navegación */
+.facilities-swiper .swiper-button-next:after,
+.facilities-swiper .swiper-button-prev:after {
+    font-size: 1.2rem;               /* Tamaño del ícono */
+}
+
+/* Puntos de paginación */
+.facilities-swiper .swiper-pagination-bullet {
+    background: white;               /* Color blanco */
+    opacity: 0.7;                    /* Semitransparente */
+}
+
+/* Punto de paginación activo */
+.facilities-swiper .swiper-pagination-bullet-active {
+    background: #235610;             /* Color morado */
+    opacity: 1;                      /* Totalmente visible */
+}
+
+/* Ajustes responsivos para pantallas móviles (máximo 768px) */
+@media (max-width: 768px) {
+    /* Reduce la altura del carrusel en móviles */
+    .facilities-swiper {
+        height: 300px;               /* Altura más compacta para móviles */
+    }
+
+    /* Ajusta la información de la instalación para que siempre sea visible */
+    .facility-info {
+        transform: translateY(0);     /* Mantiene visible la información */
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));  /* Fondo más oscuro para mejor legibilidad */
+    }
+
+    /* Reduce el tamaño del título para mejor ajuste */
+    .facility-info h3 {
+        font-size: 1.2rem;           /* Título más pequeño en móviles */
+    }
+}
+/* Contenedor de imagen de contacto con animación flotante */
+.contact-image {
+    position: relative;              /* Para posicionamiento de elementos hijos */
+    border-radius: 20px;             /* Bordes redondeados */
+    overflow: hidden;                /* Oculta contenido desbordado */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    animation: float 6s ease-in-out infinite;  /* Animación flotante continua */
+}
+
+/* Estilos de la imagen dentro del contenedor */
+.contact-image img {
+    width: 100%;                     /* Ancho completo */
+    height: 100%;                    /* Alto completo */
+    object-fit: cover;               /* Ajusta imagen manteniendo proporción */
+}
+
+/* Contenedor de tarjetas de contacto */
+.contact-cards {
+    display: flex;                   /* Diseño flexible */
+    flex-direction: column;          /* Apilado vertical */
+    gap: 2rem;                       /* Espacio entre tarjetas */
+}
+
+/* Tarjeta individual de contacto */
+.contact-card {
+    background: white;               /* Fondo blanco */
+    padding: 2rem;                   /* Relleno interno */
+    border-radius: 20px;             /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    position: relative;              /* Para posicionamiento de elementos */
+    overflow: hidden;                /* Oculta contenido desbordado */
+    transition: transform 0.3s ease;  /* Transición suave */
+}
+
+/* Efecto hover en las tarjetas */
+.contact-card:hover {
+    transform: translateY(-5px);      /* Eleva la tarjeta 5px al pasar el mouse */
+}
+
+/* Ícono circular en las tarjetas */
+.card-icon {
+    width: 60px;                     /* Ancho fijo */
+    height: 60px;                    /* Alto fijo */
+    border-radius: 50%;              /* Forma circular */
+    display: flex;                   /* Diseño flexible */
+    align-items: center;             /* Centra verticalmente */
+    justify-content: center;         /* Centra horizontalmente */
+    font-size: 1.8rem;              /* Tamaño del ícono */
+    margin-bottom: 1.5rem;          /* Espacio inferior */
+    position: relative;             /* Para z-index */
+    z-index: 1;                     /* Nivel de apilamiento */
+}
+
+/* Estilos para el ícono de WhatsApp */
+.whatsapp .card-icon {
+    background: #25D366;             /* Color verde de WhatsApp */
+    color: white;                    /* Texto en blanco */
+}
+
+/* Estilos para el ícono de Email */
+.email .card-icon {
+    background: #235610;             /* Color morado personalizado */
+    color: white;                    /* Texto en blanco */
+}
+
+/* Contenedor del contenido de la tarjeta */
+.card-content {
+    position: relative;              /* Para posicionamiento relativo */
+    z-index: 1;                      /* Nivel de apilamiento */
+}
+
+/* Estilos para títulos dentro del contenido */
+.card-content h3 {
+    font-size: 1.5rem;              /* Tamaño grande de texto */
+    margin-bottom: 0.5rem;          /* Espacio inferior */
+    color: #235610;                    /* Color gris oscuro */
+}
+
+/* Estilos para párrafos dentro del contenido */
+.card-content p {
+    color: #161616;                    /* Color gris medio */
+    margin-bottom: 1.5rem;          /* Espacio inferior */
+}
+
+/* Contenedores de números y emails */
+.contact-numbers,
+.email-addresses {
+    display: flex;                  /* Diseño flexible */
+    flex-direction: column;         /* Apilado vertical */
+    gap: 1rem;                      /* Espacio entre elementos */
+}
+
+/* Estilos de íconos dentro de las tarjetas */
+.card-icon i {
+    font-size: 2rem;               /* Tamaño grande del ícono */
+    color: white;                   /* Color blanco */
+}
+
+/* Estilos del botón de contacto */
+.contact-btn {
+    display: flex;                  /* Diseño flexible */
+    align-items: center;            /* Centrado vertical */
+    gap: 0.8rem;                    /* Espacio entre elementos */
+    padding: 1rem 1.5rem;           /* Relleno interno */
+    background: #f8f9ff;            /* Fondo gris muy claro */
+    border-radius: 30px;            /* Bordes muy redondeados */
+    color: #333;                    /* Color gris oscuro */
+    text-decoration: none;          /* Sin subrayado */
+    transition: all 0.3s ease;      /* Transición suave */
+    position: relative;             /* Para tooltip */
+}
+
+/* Ícono dentro del botón */
+.contact-btn i {
+    font-size: 1.2rem;             /* Tamaño del ícono */
+}
+
+/* Efecto hover del botón */
+.contact-btn:hover {
+    background: #235610;            /* Fondo morado al hover */
+    color: white;                   /* Texto blanco */
+    transform: translateX(5px);      /* Desplazamiento a la derecha */
+}
+
+/* Estilos del tooltip */
+.tooltip {
+    position: absolute;             /* Posicionamiento absoluto */
+    top: -30px;                     /* Posición inicial */
+    left: 50%;                      /* Centrado horizontal */
+    transform: translateX(-50%);     /* Ajuste de centrado */
+    background: #333;               /* Fondo oscuro */
+    color: white;                   /* Texto blanco */
+    padding: 0.5rem 1rem;           /* Relleno interno */
+    border-radius: 15px;            /* Bordes redondeados */
+    font-size: 0.8rem;             /* Texto pequeño */
+    opacity: 0;                     /* Inicialmente invisible */
+    visibility: hidden;             /* Inicialmente oculto */
+    transition: all 0.3s ease;      /* Transición suave */
+}
+
+/* Efecto hover del tooltip */
+.contact-btn:hover .tooltip {
+    opacity: 1;                     /* Visible */
+    visibility: visible;            /* Mostrar */
+    top: -40px;                     /* Posición final */
+}
+
+/* Decoración de la tarjeta */
+.card-decoration {
+    position: absolute;             /* Posicionamiento absoluto */
+    right: -20px;                   /* Posición derecha */
+    bottom: -20px;                  /* Posición inferior */
+    opacity: 0.1;                   /* Muy transparente */
+    transform: rotate(-15deg);      /* Rotación */
+}
+
+/* Animación de huella flotante */
+.floating-paw {
+    width: 100px;                   /* Ancho fijo */
+    height: 100px;                  /* Alto fijo */
+    animation: float 3s ease-in-out infinite;  /* Animación continua */
+}
+/* Estilos base del botón de contacto */
+.contact-btn {
+    display: inline-block;           /* Comportamiento en línea con propiedades de bloque */
+    margin-top: 1rem;               /* Espacio superior */
+    padding: 0.8rem 2rem;           /* Relleno interno (vertical | horizontal) */
+    background: #235610;            /* Color de fondo morado */
+    color: white;                   /* Texto en color blanco */
+    border-radius: 30px;            /* Bordes muy redondeados */
+    text-decoration: none;          /* Elimina el subrayado del enlace */
+    transition: all 0.3s ease;      /* Transición suave para todos los cambios */
+}
+
+/* Efecto hover del botón de contacto (hay una duplicación en el código) */
+.contact-btn:hover {
+    background: #a855f7;            /* Color morado más oscuro al pasar el mouse */
+    transform: translateY(-3px);     /* Eleva el botón 3px */
+}
+
+/* NOTA: Esta es una duplicación del hover anterior y debería eliminarse */
+.contact-btn:hover {
+    background: #235610;            /* Duplicado */
+    transform: translateY(-3px);     /* Duplicado */
+}
+/* Sección principal de ubicación */
+.location-section {
+    padding: 6rem 5%;               /* Relleno superior/inferior y horizontal */
+    background: white;              /* Fondo blanco */
+    text-align: center;             /* Texto centrado */
+}
+
+/* Contenedor principal con ancho máximo */
+.location-container {
+    max-width: 1400px;              /* Ancho máximo del contenedor */
+    margin: 0 auto;                 /* Centrado horizontal */
+}
+
+/* Encabezado de la sección de ubicación */
+.location-header {
+    margin-bottom: 2rem;            /* Espacio inferior */
+}
+
+/* Título principal de la ubicación */
+.location-header h2 {
+    font-size: 2.8rem;              /* Tamaño grande de texto */
+    color: #235610;                    /* Color gris oscuro */
+    margin-bottom: 0.5rem;          /* Espacio inferior */
+    position: relative;             /* Para la línea decorativa */
+    display: inline-block;          /* Comportamiento en línea */
+}
+
+/* Línea decorativa debajo del título */
+.location-header h2::after {
+    content: '';                    /* Contenido del pseudo-elemento */
+    position: absolute;             /* Posicionamiento absoluto */
+    bottom: -10px;                 /* Distancia desde abajo */
+    left: 50%;                     /* Centrado horizontal */
+    transform: translateX(-50%);    /* Ajuste de centrado */
+    width: 60px;                   /* Ancho de la línea */
+    height: 3px;                   /* Grosor de la línea */
+    background: #C084FC;           /* Color morado */
+    border-radius: 2px;            /* Bordes redondeados */
+}
+
+/* Párrafo del encabezado */
+.location-header p {
+    color: #666;                   /* Color gris medio */
+    margin-bottom: 0.5rem;         /* Espacio inferior */
+}
+
+/* Enlaces en el encabezado */
+.location-header a {
+    color: #C084FC;                /* Color morado */
+    text-decoration: none;         /* Sin subrayado */
+    transition: color 0.3s ease;   /* Transición suave del color */
+}
+
+/* Efecto hover en enlaces */
+.location-header a:hover {
+    color: #a855f7;                /* Color morado más oscuro al hover */
+}
+
+/* Mantener el resto del código igual */
+/* Contenedor del contenido de ubicación */
+.location-content {
+    display: flex;                  /* Usa diseño flexible */
+    align-items: center;            /* Centra elementos verticalmente */
+    justify-content: center;        /* Centra elementos horizontalmente */
+    gap: 2rem;                      /* Espacio entre elementos de 2rem */
+    margin-top: 3rem;               /* Margen superior */
+    max-width: 1200px;              /* Ancho máximo del contenedor */
+    margin: 3rem auto 0;            /* Margen: superior | horizontal | inferior */
+    padding: 0 2rem;                /* Relleno horizontal */
+}
+
+/* Contenedores del carrusel y mapa */
+.facilities-carousel,
+.map-container {
+    flex: 1;                        /* Distribución equitativa del espacio */
+    height: 450px;                  /* Altura fija */
+    border-radius: 20px;            /* Bordes redondeados */
+    overflow: hidden;               /* Oculta contenido desbordado */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
+/* Contenedor del carrusel */
+.facilities-carousel {
+    position: relative;             /* Para posicionamiento de elementos hijos */
+}
+
+/* Diapositivas del carrusel */
+.facilities-carousel .swiper-slide {
+    opacity: 0;                     /* Inicialmente invisible */
+    transition: all 0.6s ease;      /* Transición suave */
+}
+
+/* Diapositiva activa */
+.facilities-carousel .swiper-slide-active {
+    opacity: 1;                     /* Visible cuando está activa */
+}
+
+/* Imágenes del carrusel */
+.facilities-carousel img {
+    width: 100%;                    /* Ancho completo */
+    height: 100%;                   /* Alto completo */
+    object-fit: cover;              /* Ajuste de imagen manteniendo proporción */
+}
+
+/* Puntos de navegación del carrusel */
+.facilities-carousel .swiper-pagination-bullet {
+    width: 10px;                    /* Ancho del punto */
+    height: 10px;                   /* Alto del punto */
+    background: #C084FC;            /* Color morado */
+    opacity: 0.5;                   /* Semi-transparente */
+    transition: all 0.3s ease;      /* Transición suave */
+}
+
+/* Punto de navegación activo */
+.facilities-carousel .swiper-pagination-bullet-active {
+    opacity: 1;                     /* Totalmente visible */
+    width: 20px;                    /* Más ancho cuando está activo */
+    border-radius: 5px;             /* Bordes más suaves */
+}
+
+/* Botones de navegación (anterior/siguiente) */
+.facilities-carousel .swiper-button-next,
+.facilities-carousel .swiper-button-prev {
+    color: #fff;                    /* Color blanco */
+    background: rgba(192, 132, 252, 0.8);  /* Fondo morado semi-transparente */
+    width: 40px;                    /* Ancho fijo */
+    height: 40px;                   /* Alto fijo */
+    border-radius: 50%;             /* Forma circular */
+    transition: all 0.3s ease;      /* Transición suave */
+}
+
+/* Íconos de los botones de navegación */
+.facilities-carousel .swiper-button-next:after,
+.facilities-carousel .swiper-button-prev:after {
+    font-size: 1.2rem;              /* Tamaño del ícono */
+}
+
+/* Ajustes responsivos para pantallas móviles */
+@media (max-width: 768px) {
+    .location-content {
+        flex-direction: column;      /* Cambia a disposición vertical */
+    }
+
+    .facilities-carousel,
+    .map-container {
+        width: 100%;                 /* Ancho completo */
+        height: 350px;               /* Altura fija reducida */
+    }
+}
+
+/* Animación de entrada desde la izquierda */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;                  /* Comienza invisible */
+        transform: translateX(-30px); /* Comienza 30px a la izquierda */
+    }
+    to {
+        opacity: 1;                  /* Termina visible */
+        transform: translateX(0);     /* Termina en posición original */
+    }
+}
+
+/* Animación de aparición gradual */
+@keyframes fadeIn {
+    from {
+        opacity: 0;                  /* Comienza invisible */
+    }
+    to {
+        opacity: 1;                  /* Termina visible */
+    }
+}
+
+/* Animación de flotación vertical */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);     /* Posición inicial y final */
+    }
+    50% {
+        transform: translateY(-10px); /* Punto más alto de la flotación */
+    }
+}
+
+/* Ajustes responsivos para tablets */
+@media (max-width: 1024px) {
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);  /* Cambia a 2 columnas */
+    }
+    .location-info {
+        position: static;            /* Elimina posicionamiento especial */
+        margin-top: 2rem;           /* Añade espacio superior */
+    }
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 768px) {
+    .contact-hero {
+        grid-template-columns: 1fr;   /* Una sola columna */
+        height: auto;                 /* Altura automática */
+        padding: 4rem 5%;            /* Ajuste de relleno */
+    }
+
+    .hero-content {
+        text-align: center;          /* Centra el texto */
+        padding: 0;                  /* Elimina relleno */
+    }
+
+    .social-grid,
+    .contact-cards {
+        grid-template-columns: 1fr;   /* Una columna para redes y tarjetas */
+    }
+
+    .section-header h2 {
+        font-size: 2rem;             /* Reduce tamaño del título */
+    }
+}
+
+/* Sección Nuestra Sede */
+.location-section {
+    position: relative;
+    padding: 6rem 2rem;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.location-carousel {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.location-carousel .carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.location-carousel .carousel-slide.active {
+    opacity: 1;
+}
+
+.location-carousel .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.location-map {
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Media Queries para la sección de ubicación */
+@media (max-width: 992px) {
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .location-carousel,
+    .location-map {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .location-section {
+        padding: 4rem 1.5rem;
+    }
+    
+    .location-carousel,
+    .location-map {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .location-carousel,
+    .location-map {
+        height: 250px;
+    }
+}

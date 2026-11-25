@@ -1,0 +1,1527 @@
+/* Importación de la fuente Poppins de Google Fonts con todos sus pesos y estilos */
+/* Esta importación incluye todas las variantes de peso y estilo de la fuente para máxima flexibilidad en el diseño */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Estilos generales para la sección "Sobre Nosotros" */
+/* Contenedor principal con espaciado y fondo suave */
+#sobre-nosotros {
+    padding: 20px;
+    background-color: #DEF8EA;
+    /* Color de fondo minimalista */
+}
+
+/* Contenedor responsivo con ancho máximo para mantener la legibilidad */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos de tipografía para títulos principales y secundarios */
+h1,
+h2 {
+    color: #235610;
+    /* Color de texto elegante */
+}
+
+/* Espaciado consistente entre secciones principales */
+.historia,
+.mision-vision,
+.equipo,
+.mapa {
+    margin-bottom: 20px;
+}
+
+.empleado {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.empleado img {
+    width: 50px;
+    /* Ajustar según el diseño */
+    height: 50px;
+    /* Ajustar según el diseño */
+    border-radius: 50%;
+    /* Para un diseño más elegante */
+    margin-right: 10px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.timeline-item h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.timeline-icon-img {
+    width: 24px;
+    /* Puedes ajustar este tamaño según necesites */
+    height: 24px;
+    /* Puedes ajustar este tamaño según necesites */
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Media queries para responsive */
+@media (max-width: 768px) {
+    .timeline-icon-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .timeline-icon-img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 20px;
+        /* Espaciado en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2em;
+        /* Ajustar tamaño de fuente */
+    }
+
+    .empleado {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .empleado img {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+        /* Ajustar tamaño de fuente */
+    }
+
+    .mision-vision h2,
+    .historia h2 {
+        font-size: 1.5em;
+        /* Ajustar tamaño de fuente */
+    }
+
+    .mapa iframe {
+        width: 100%;
+        /* Hacer el mapa responsivo */
+        height: 300px;
+        /* Ajustar altura */
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5em;
+        /* Ajustar tamaño de fuente */
+    }
+
+    .empleado img {
+        width: 40px;
+        /* Ajustar tamaño de imagen */
+        height: 40px;
+        /* Ajustar tamaño de imagen */
+    }
+
+    .empleado p {
+        font-size: 0.9em;
+        /* Ajustar tamaño de texto */
+    }
+}
+
+/* seccion nosotros y nuestra historia */
+
+/* Estilos generales para la sección "Sobre Nosotros" */
+:root {
+    --primary-color: #DEF8EA;
+    /* Lavanda pastel */
+    --secondary-color: #7DD181;
+    /* Rosa pastel claro */
+    --accent-color: #235610;
+    /* Morado medio */
+    --text-color: #235610;
+    /* Morado oscuro */
+    --light-text: #161616;
+    /* Blanco rosado */
+    --gradient-1: linear-gradient(135deg, #7DD181, #DEF8EA);
+    --gradient-2: linear-gradient(135deg, #DEF8EA, #7DD181);
+}
+
+/* Estilos de la sección Hero */
+.about-hero {
+    min-height: 90vh;
+    background: var(--gradient-1);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* Contenedor del video con efectos 3D */
+.video-container {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px #235610; /* Sombra más suave y transparente */
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.5s ease;
+}
+
+.video-container:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos del texto principal */
+.hero-text {
+    color: var(--text-color);
+    padding: 2rem;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    background: linear-gradient(to right, var(--text-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Botón de diseño con efectos */
+.design-now {
+    padding: 1rem 2.5rem;
+    background: var(--accent-color);
+    border: none;
+    border-radius: 30px;
+    color: var(--light-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px #235610; /* Sombra reducida */
+}
+
+.design-now:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px #235610; /* Sombra hover reducida */
+}
+
+/* Sección Quiénes Somos */
+.section {
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section {
+    background: #DEF8EA;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* Estilos unificados para títulos principales */
+.about-content h2,
+.history-content h2 {
+    font-size: 2.5rem;
+    color: #235610;
+    margin-bottom: 1.5rem;
+    position: relative;
+    text-align: center;
+}
+
+.about-content h2::after,
+.history-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    /* Center the line */
+    transform: translateX(-50%);
+    /* Ensure perfect centering */
+    width: 60px;
+    height: 3px;
+    background: #DEF8EA;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #235610; /* Sombra reducida y más sutil */
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Sección Historia */
+.history-section {
+    background: #DEF8EA;
+    position: relative;
+}
+
+.history-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Timeline con iconos personalizados */
+.timeline {
+    position: relative;
+    padding-left: 50px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.timeline-item h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.timeline-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Carrusel de Historia */
+.history-carousel {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .video-container {
+        width: 100%;
+        height: 400px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .about-container,
+    .history-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 1.5rem;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .video-container {
+        height: 300px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text {
+        padding: 1rem;
+    }
+
+    .about-content h2,
+    .history-content h2 {
+        font-size: 2rem;
+    }
+
+    .timeline {
+        padding-left: 30px;
+    }
+
+    .timeline-icon-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-container {
+        height: 250px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .design-now {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .about-content h2,
+    .history-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .timeline-icon-img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Sección Misión */
+.mission-section {
+    position: relative;
+    padding: 6rem 2rem;
+    background-color: #DEF8EA;
+    overflow: hidden;
+}
+
+.mission-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mission-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.mission-video {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px  #235610; /* Sombra reducida y más sutil */
+}
+.mission-video video {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.mission-text {
+    padding: 2rem;
+}
+
+.mission-text h2 {
+    font-size: 3rem;
+    color:  #235610;
+    margin-bottom: 1.5rem;
+}
+
+.mission-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color:  #161616;
+    margin-bottom: 2rem;
+}
+
+.mission-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #DEF8EA;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.mission-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 122, 255, 0.2);
+}
+
+/* Sección Visión */
+.vision-section {
+    position: relative;
+    padding: 6rem 2rem;
+    background-color: white;
+    overflow: hidden;
+}
+
+.vision-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.vision-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.vision-image {
+    position: relative;
+}
+
+.vision-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.vision-text {
+    padding: 2rem;
+}
+
+.vision-text h2 {
+    font-size: 3rem;
+    color: #235610;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.vision-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #161616;
+    margin-bottom: 2rem;
+}
+
+.vision-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #28A745;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.vision-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(40, 167, 69, 0.2);
+}
+
+/* Elementos decorativos */
+.shape,
+.decorative {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shape-1 {
+    top: 10%;
+    left: -5%;
+    width: 150px;
+}
+
+.shape-2 {
+    bottom: 10%;
+    right: -5%;
+    width: 120px;
+}
+
+.dec-1 {
+    top: 5%;
+    right: 10%;
+    width: 80px;
+}
+
+.dec-2 {
+    bottom: 15%;
+    left: 5%;
+    width: 100px;
+}
+
+.dec-3 {
+    top: 50%;
+    right: -3%;
+    width: 60px;
+}
+
+/* Fondos personalizados para secciones existentes */
+.about-section {
+    background-image: url('assets/UÑAS-removebg-preview.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.history-section {
+    background-image: url('/path-to-history-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+
+    .mission-content,
+    .vision-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .mission-text h2,
+    .vision-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .shape,
+    .decorative {
+        width: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .mission-section,
+    .vision-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .mission-video video {
+        height: 300px;
+    }
+
+    .mission-text h2,
+    .vision-text h2 {
+        font-size: 2rem;
+    }
+
+    .mission-text p,
+    .vision-text p {
+        font-size: 1.1rem;
+    }
+
+    .shape,
+    .decorative {
+        width: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .mission-text h2,
+    .vision-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .mission-btn,
+    .vision-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .shape,
+    .decorative {
+        width: 40px;
+    }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #235610;
+    margin-bottom: 1.5rem;
+    position: relative;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    /* Center the line */
+    transform: translateX(-50%);
+    /* Ensure perfect centering */
+    width: 60px;
+    height: 3px;
+    background: #235610;
+}
+
+.mission-text h2,
+.vision-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Estilos para la sección de equipo */
+.team-section {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #235610;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+    background: #b164e0;
+    margin: 0 auto 2rem;
+}
+
+.team-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.team-card {
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.team-card-inner {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.2rem;
+    color: #235610;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #161616;
+}
+
+/* Efecto hover actualizado */
+.team-card:hover {
+    transform: scale(1.03);
+}
+
+.team-card:hover .team-card-inner {
+    box-shadow: 0 0 20px rgba(177, 100, 224, 0.3);
+}
+
+.team-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+/* Media Queries actualizados */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    }
+
+    .team-section {
+        padding: 3rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 300px;
+    }
+
+    .card-image {
+        height: 250px;
+    }
+
+    .team-subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+/* Modal styles */
+.modal, .member-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(222, 248, 234, 0.85); /* NUEVO: Fondo claro #DEF8EA con opacidad */
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    overflow-y: auto; /* Añadido para asegurar scroll si el modal es muy alto */
+}
+
+.modal.active, .member-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ffffff 0%, #DEF8EA 100%);
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 25px 50px -12px rgba(35, 86, 16, 0.3);
+    animation: modalPopIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(0);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #235610 0%, #2d6a15 100%);
+    padding: 25px 30px;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    z-index: 1001;
+}
+
+.close-modal:hover {
+    background: #ffffff;
+    color: #235610;
+    transform: rotate(90deg) scale(1.1);
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.modal-body {
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.modal-inner {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.modal-image {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(35, 86, 16, 0.15);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.modal-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(35, 86, 16, 0.1), rgba(35, 86, 16, 0.2));
+    z-index: 1;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.info-group {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(35, 86, 16, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(35, 86, 16, 0.1);
+}
+
+.info-group:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(35, 86, 16, 0.12);
+}
+
+.info-group h3 {
+    color: #235610;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.info-label {
+    color: #235610;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-value {
+    color: #161616;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+@keyframes modalPopIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Media queries actualizados */
+@media (max-width: 768px) {
+    .modal-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-image {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .modal-image img {
+        height: 300px;
+    }
+
+    .info-group h3 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .info-group h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .info-group p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 100%;
+        margin: 0;
+        border-radius: 20px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-header {
+        padding: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .info-group {
+        padding: 20px;
+    }
+}
+
+/* Elementos decorativos */
+.team-decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.decor-1 {
+    top: 10%;
+    left: 5%;
+    width: 100px;
+}
+
+.decor-2 {
+    bottom: 15%;
+    right: 5%;
+    width: 120px;
+}
+
+.decor-3 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    opacity: 0.1;
+}
+
+/* Agregamos estilos específicos para la imagen del miembro */
+.member-modal img {
+    max-width: 180px;  /* Ancho máximo reducido */
+    max-height: 240px; /* Alto máximo específico */
+    width: auto;       /* Ancho automático para mantener proporción */
+    height: auto;      /* Altura automática para mantener proporción */
+    display: block;    /* Elimina espacio extra */
+    margin: 0 auto;    /* Centra la imagen */
+    border-radius: 8px;/* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    object-fit: contain; /* Mantiene la proporción sin deformar */
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card img {
+        height: 300px;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .modal-inner {
+        flex-direction: column;
+    }
+    
+    .modal-image {
+        max-width: 100%;
+    }
+    
+    .modal-image img {
+        max-height: 300px;
+    }
+
+    .member-modal img {
+        max-width: 250px;  /* Reducimos el tamaño en móviles */
+    }
+
+    .member-modal img {
+        max-width: 250px;  /* Reducimos el tamaño en móviles */
+    }
+}
+
+@media (max-width: 576px) {
+    .team-card img {
+        height: 250px;
+    }
+
+    .team-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .modal-info h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .member-modal img {
+        max-width: 200px;  /* Aún más pequeño en pantallas muy pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .member-modal img {
+        max-width: 200px;  /* Aún más pequeño en pantallas muy pequeñas */
+    }
+}
+
+/* Sección Nuestra Sede */
+.location-section {
+    position: relative;
+    padding: 6rem 2rem;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.location-carousel {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.location-carousel .carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.location-carousel .carousel-slide.active {
+    opacity: 1;
+}
+
+.location-carousel .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.location-map {
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Media Queries para la sección de ubicación */
+@media (max-width: 992px) {
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .location-carousel,
+    .location-map {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .location-section {
+        padding: 4rem 1.5rem;
+    }
+    
+    .location-carousel,
+    .location-map {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .location-carousel,
+    .location-map {
+        height: 250px;
+    }
+}
+
+/* estilos letras contenido de historia */
+
+.history-content h2 {
+    color: #235610; /* Verde oscuro para el título principal */
+}
+
+.timeline-item h3 {
+    color: #235610; /* Verde oscuro para los años */
+}
+
+.timeline-item p {
+    color: #161616; /* Gris oscuro para el texto descriptivo */
+}
+
+.know-more-btn {
+    color: #ffffff; /* Blanco para el texto del botón */
+}
+
+/* estilos texto quienes somos */
+
+.about-content h2 {
+    color: #235610; /* Verde oscuro para el título */
+}
+
+.lead-text {
+    color: #161616; /* Gris oscuro para mejor legibilidad del párrafo */
+    line-height: 1.6; /* Mejora el espaciado entre líneas */
+}
+
+.know-more-btn {
+    color: #ffffff; /* Blanco para el texto del botón */
+}
+.modal-member-image{
+    max-width: 200px;
+}
+
+/* ==========================================================================
+   Estilos REFINADOS para el Modal de Información del Miembro (#info-team-modal)
+   ========================================================================== */
+
+#info-team-modal .modal-content {
+    background: #FFFFFF;
+    border-radius: 24px; /* Bordes ligeramente más pronunciados */
+    box-shadow: 0 20px 50px rgba(35, 86, 16, 0.22); /* Sombra ajustada */
+    max-width: 650px; /* Ancho ligeramente ajustado para compactar */
+    width: 90%;
+    margin: 7vh auto; /* Margen vertical ajustado */
+    overflow: hidden;
+    animation: modalPopInEpic 0.55s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    position: relative; /* Para elementos decorativos absolutos */
+}
+
+/* Elemento decorativo sutil - Huella */
+#info-team-modal .modal-content::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    width: 100px; /* Tamaño de la huella */
+    height: 100px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237DD181' opacity='0.1'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm-7 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3.5-7c-.83 0-1.5-.67-1.5-1.5S11.17 5.5 12 5.5s1.5.67 1.5 1.5S12.83 8.5 12 8.5zm-3.5 3.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/%3E%3C/svg%3E"); /* SVG de huella simple, color #7DD181, opacidad baja */
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(-15deg);
+    z-index: 0;
+}
+
+
+@keyframes modalPopInEpic {
+    0% {
+        opacity: 0;
+        transform: translateY(45px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#info-team-modal .modal-header {
+    background: #235610;
+    color: #FFFFFF;
+    padding: 25px 35px; /* Padding ajustado */
+    text-align: center;
+    position: relative; /* Para que el z-index funcione sobre el ::before del content */
+    z-index: 1;
+}
+
+#info-team-modal .modal-header h3 {
+    margin: 0;
+    font-size: 1.7em; /* Tamaño de título ajustado */
+    font-weight: 600; /* Ligeramente menos bold para un look más refinado */
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+#info-team-modal .close {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    font-size: 1.7rem;
+    font-weight: 400; /* Más legible */
+    color: rgba(255, 255, 255, 0.85);
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    z-index: 2; /* Por encima del header */
+}
+
+#info-team-modal .close:hover {
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-50%) rotate(90deg);
+}
+
+#info-team-modal .modal-body {
+    padding: 30px 35px 35px; /* Padding ajustado */
+    background-color: #F9FEFB; /* Blanco con un levísimo tinte verde */
+    flex-grow: 1;
+    position: relative; /* Para que el z-index funcione sobre el ::before del content */
+    z-index: 1;
+}
+
+#info-team-modal .modal-member-info {
+    display: grid;
+    grid-template-columns: 180px 1fr; /* Ancho de imagen ajustado */
+    gap: 15px 30px; /* Espaciado de grid reducido para compactar */
+    align-items: center;
+}
+
+#info-team-modal .modal-member-image {
+    grid-row: 1 / span 4;
+    width: 180px;  /* Ancho para marco cuadrado */
+    height: 180px; /* Alto para marco cuadrado */
+    object-fit: cover;
+    border-radius: 16px; /* Bordes redondeados para el marco cuadrado */
+    border: 5px solid #7DD181;
+    box-shadow: 0 6px 20px rgba(125, 209, 129, 0.35);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+#info-team-modal .modal-member-image:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 30px rgba(125, 209, 129, 0.45);
+}
+
+#info-team-modal .modal-member-info h3 { /* Nombre del Miembro */
+    font-size: 2em; /* Tamaño de nombre ajustado para jerarquía */
+    color: #235610;
+    margin: 0 0 8px 0; /* Margen inferior reducido */
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+#info-team-modal .modal-member-info p {
+    font-size: 1.05em; /* Tamaño de párrafo aumentado para legibilidad */
+    color: #2c3e50; /* Color de texto principal más oscuro y neutro */
+    line-height: 1.65;
+    margin: 0 0 10px 0; /* Margen inferior ajustado */
+    text-align: left;
+}
+
+#info-team-modal .modal-member-info p strong { /* Etiquetas: Rol, Descripción, etc. */
+    font-weight: 600;
+    color: #235610;
+    display: block;
+    margin-bottom: 4px; /* Espacio entre etiqueta y valor reducido */
+    font-size: 0.95em; /* Tamaño de etiqueta ajustado */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Ajuste de visibilidad para descripción si es muy larga */
+#info-team-modal .modal-member-info p.member-description {
+    font-size: 0.95em; /* Descripción un poco más pequeña */
+    color: #566573; /* Color más suave para la descripción */
+    max-height: 100px; /* Limitar altura si es muy extensa */
+    overflow-y: auto; /* Permitir scroll si excede */
+    padding-right: 5px; /* Espacio para la barra de scroll */
+}
+
+
+/* Posicionamiento explícito en el grid */
+#info-team-modal .modal-member-info h3 { grid-column: 2; grid-row: 1; align-self: end; /* Alinea el nombre más cerca de la primera línea de info */}
+#info-team-modal .modal-member-info p:nth-of-type(1) { grid-column: 2; grid-row: 2; } /* Rol */
+#info-team-modal .modal-member-info p:nth-of-type(2) { grid-column: 2; grid-row: 3; } /* Descripción */
+#info-team-modal .modal-member-info p:nth-of-type(3) { grid-column: 2; grid-row: 4; } /* Email */
+#info-team-modal .modal-member-info p:nth-of-type(4) { grid-column: 2; grid-row: 5; } /* Teléfono */
+
+#info-team-modal .modal-footer {
+    padding: 18px 35px; /* Padding ajustado */
+    background-color: #f8fbf8;
+    border-top: 1px solid #eef3ee;
+    text-align: right;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    position: relative; /* Para que el z-index funcione sobre el ::before del content */
+    z-index: 1;
+}
+
+/* Elemento decorativo adicional - Línea sutil en el footer */
+#info-team-modal .modal-footer::before {
+    content: '';
+    position: absolute;
+    bottom: 10px; /* Posición de la línea */
+    right: 35px;
+    width: 50px; /* Largo de la línea */
+    height: 3px; /* Grosor de la línea */
+    background-color: #7DD181; /* Color suave temático */
+    border-radius: 2px;
+    opacity: 0.5;
+}

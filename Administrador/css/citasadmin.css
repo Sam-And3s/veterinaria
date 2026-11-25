@@ -1,0 +1,1028 @@
+/* Sección de estadísticas - Barra superior con información estadística */
+.stats-container {
+    display: flex;              /* Disposición flexible para los elementos internos */
+    gap: 1.2rem;               /* Espacio entre elementos hijos */
+    padding: 0.8rem 2rem;      /* Relleno interno: 0.8rem arriba/abajo, 2rem izquierda/derecha */
+    margin: 0;                 /* Sin márgenes externos */
+    position: fixed;           /* Posición fija en la ventana */
+    top: 90px;                /* Distancia desde arriba */
+    left: 280px;              /* Distancia desde la izquierda (deja espacio para el menú lateral) */
+    right: 25px;              /* Distancia desde la derecha */
+    z-index: 10;              /* Nivel de apilamiento */
+    justify-content: flex-start; /* Alineación de elementos al inicio */
+}
+
+
+/* Botón de información */
+.action-btn.info {
+    background-color: #007bff; /* Azul */
+    color: #fff; /* Texto blanco */
+    border: none;
+    border-radius: 50%; /* Forma circular */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover para el botón de información */
+.action-btn.info:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+}
+
+
+/* Lista de citas */
+.appointments-list {
+    display: flex;                           /* Disposición flexible */
+    flex-direction: column;                  /* Elementos apilados verticalmente */
+    gap: 0.5rem;                            /* Espacio entre citas */
+    overflow-y: auto;                        /* Barra de desplazamiento vertical */
+    padding-right: 5px;                      /* Relleno derecho */
+    padding-bottom: 15px;                    /* Relleno inferior */
+    flex: 1;                                 /* Ocupa el espacio restante */
+    min-height: 0;                          /* Permite el scroll */
+}
+
+/* Elemento individual de cita */
+.appointment-item {
+    display: flex;                           /* Disposición en cuadrícula */
+    justify-content: space-between;
+    grid-template-columns: 80px 1fr 95px;    /* 3 columnas: hora, info, acciones */
+    align-items: center;                     /* Alineación vertical centrada */
+    gap: 20rem;                            /* Espacio entre elementos */
+    padding: 10px;                        /* Relleno interno */
+    background: #f8f9fa;
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 5px;                    /* Bordes redondeados */
+    transition: all 0.3s ease;              /* Transición suave */
+    flex-shrink: 0;                         /* Evita que se encoja */
+    border-left: 3px solid transparent;
+    margin-bottom: 10px; /* Espaciado entre citas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Encabezado de la cita */
+.appointment-header {
+    font-size: 1.2rem; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+    color: #333; /* Color del texto */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+}
+
+/* Efecto al pasar el mouse sobre una cita */
+.appointment-item:hover {
+    border-left-color: #B666D2;             /* Borde izquierdo morado */
+    transform: translateX(5px);              /* Desplazamiento a la derecha */
+    background: white;                       /* Fondo blanco */
+    box-shadow: 0 2px 8px rgba(182, 102, 210, 0.1);  /* Sombra suave */
+}
+
+/* Contenedor principal del calendario */
+.calendar-container {
+    position: relative;                          /* Posición fija en la ventana */
+    top: 90px;                               /* Distancia desde arriba */
+    left: 300px;                             /* Distancia desde la izquierda */
+    right: 380px;                            /* Distancia desde la derecha */
+    height: calc(109vh - 150px);             /* Altura calculada restando márgenes */
+    width: calc(230vh - 700px); /* Ancho calculado restando márgenes */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    background: white;                        /* Fondo blanco */
+    border-radius: 15px;                     /* Bordes redondeados */
+    padding: 1.2rem;                         /* Relleno interno */
+    box-shadow: 0 4px 20px rgba(182, 102, 210, 0.15);  /* Sombra suave */
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos internos se apilen verticalmente */
+}
+
+/* Barra de navegación del calendario */
+.calendar-nav {
+    display: flex;                           /* Disposición flexible */
+    align-items: center;                     /* Alineación vertical centrada */
+    justify-content: space-between;          /* Espaciado entre elementos */
+    margin-bottom: 1rem;                     /* Margen inferior */
+    padding: 0.5rem;                         /* Relleno interno */
+    background: rgba(182, 102, 210, 0.05);   /* Fondo morado muy suave */
+    border-radius: 12px;                     /* Bordes redondeados */
+}
+
+/* Contenedor de navegación por mes */
+.month-navigation {
+    display: flex;                           /* Disposición flexible */
+    align-items: center;                     /* Alineación vertical centrada */
+    gap: 0.5rem;                            /* Espacio entre elementos */
+}
+
+/* Botón de navegación mensual */
+.month-btn {
+    width: 32px;                            /* Ancho fijo */
+    height: 32px;                           /* Altura fija */
+    border: none;                           /* Sin borde */
+    border-radius: 8px;                     /* Bordes redondeados */
+    background: white;                      /* Fondo blanco */
+    color: #B666D2;                        /* Color de texto morado */
+    font-size: 1.1rem;                     /* Tamaño de fuente */
+    cursor: pointer;                       /* Cursor tipo puntero */
+    display: flex;                         /* Disposición flexible */
+    align-items: center;                   /* Centrado vertical */
+    justify-content: center;               /* Centrado horizontal */
+    transition: all 0.3s ease;             /* Transición suave */
+    box-shadow: 0 2px 4px rgba(182, 102, 210, 0.1);  /* Sombra suave */
+}
+
+/* Selector de fecha */
+.date-selector {
+    display: flex;                         /* Disposición flexible */
+    align-items: center;                   /* Alineación vertical centrada */
+    gap: 0.5rem;                          /* Espacio entre elementos */
+}
+
+/* Estilos compartidos para los selectores de mes y año */
+.month-select,
+.year-input {
+    border: 1px solid rgba(182, 102, 210, 0.2);  /* Borde morado transparente */
+    border-radius: 6px;                          /* Bordes redondeados */
+    padding: 0.3rem;                             /* Relleno interno */
+    font-size: 0.85rem;                         /* Tamaño de fuente */
+    color: #666;                                /* Color de texto gris */
+    background: white;                          /* Fondo blanco */
+    cursor: pointer;                            /* Cursor tipo puntero */
+    transition: all 0.3s ease;                  /* Transición suave */
+}
+
+/* Ancho específico para el selector de mes */
+.month-select {
+    width: 120px;                              /* Ancho fijo para mes */
+}
+
+/* Ancho específico para el selector de año */
+.year-input {
+    width: 70px;                               /* Ancho fijo para año */
+    text-align: center;                        /* Texto centrado */
+}
+
+/* Efecto al pasar el mouse sobre los selectores */
+.month-select:hover,
+.year-input:hover {
+    border-color: #B666D2;                     /* Borde morado sólido */
+}
+
+/* Efecto al enfocar los selectores */
+.month-select:focus,
+.year-input:focus {
+    outline: none;                             /* Elimina el contorno predeterminado */
+    border-color: #B666D2;                     /* Borde morado */
+    box-shadow: 0 0 0 2px rgba(182, 102, 210, 0.1);  /* Resplandor suave */
+}
+
+/* Contenedor de las vistas del calendario */
+.calendar-views {
+    margin-left: auto;                         /* Margen izquierdo automático */
+    display: flex;                             /* Disposición flexible */
+    background: white;                         /* Fondo blanco */
+    padding: 0.4rem;                           /* Relleno interno */
+    border-radius: 8px;                        /* Bordes redondeados */
+    gap: 0.5rem;                               /* Espacio entre elementos */
+    box-shadow: 0 2px 4px rgba(182, 102, 210, 0.1);  /* Sombra suave */
+}
+
+/* Botón de acción en las vistas del calendario */
+.calendar-views .action-btn {
+    width: 35px;                               /* Ancho fijo */
+    height: 35px;                              /* Altura fija */
+    border: none;                              /* Sin borde */
+    border-radius: 8px;                        /* Bordes redondeados */
+    background: white;                         /* Fondo blanco */
+    color: #B666D2;                           /* Color morado */
+    font-size: 1rem;                          /* Tamaño de fuente */
+    cursor: pointer;                          /* Cursor tipo puntero */
+    display: flex;                            /* Disposición flexible */
+    align-items: center;                      /* Centrado vertical */
+    justify-content: center;                  /* Centrado horizontal */
+    transition: all 0.3s ease;                /* Transición suave */
+    position: relative;                       /* Posicionamiento relativo */
+    overflow: hidden;                         /* Oculta desbordamiento */
+}
+
+/* Efecto al pasar el mouse sobre el botón de acción */
+.calendar-views .action-btn:hover {
+    background: #B666D2;                      /* Fondo morado */
+    color: white;                             /* Texto blanco */
+    transform: translateY(-2px);              /* Elevación ligera */
+    box-shadow: 0 4px 8px rgba(182, 102, 210, 0.2);  /* Sombra más pronunciada */
+}
+
+/* Efecto al hacer clic en el botón de acción */
+.calendar-views .action-btn:active {
+    transform: translateY(0);                  /* Regresa a posición original */
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);                /* Tamaño inicial normal */
+    }
+
+    50% {
+        transform: scale(1.05);             /* A mitad de animación aumenta un 5% */
+    }
+
+    100% {
+        transform: scale(1);                /* Vuelve al tamaño original */
+    }
+}
+
+.calendar-views .action-btn:hover {
+    animation: buttonPulse 1s infinite;     /* Animación continua de pulsación */
+}
+
+/* Estilos base del botón de vista */
+.view-btn {
+    padding: 0.3rem 0.8rem;                /* Relleno interno: 0.3rem arriba/abajo, 0.8rem izquierda/derecha */
+    border: none;                          /* Sin borde */
+    border-radius: 6px;                    /* Bordes redondeados */
+    font-size: 0.8rem;                     /* Tamaño de fuente pequeño */
+    color: #666;                           /* Color de texto gris */
+    background: transparent;               /* Fondo transparente */
+    cursor: pointer;                       /* Cursor tipo puntero */
+    transition: all 0.2s ease;             /* Transición suave para todos los cambios */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.view-btn:hover {
+    background: rgba(182, 102, 210, 0.1);  /* Fondo morado muy suave al pasar el mouse */
+}
+
+/* Estilo cuando el botón está activo/seleccionado */
+.view-btn.active {
+    background: #B666D2;                   /* Fondo morado sólido */
+    color: white;                          /* Texto en color blanco */
+    font-weight: 500;                      /* Texto semi-negrita */
+}
+
+/* Definición de la animación de entrada deslizante */
+@keyframes slideIn {
+    from {
+        opacity: 0;                          /* Comienza invisible */
+        transform: translateY(-10px);        /* Comienza 10px arriba de su posición final */
+    }
+
+    to {
+        opacity: 1;                          /* Termina totalmente visible */
+        transform: translateY(0);            /* Termina en su posición original */
+    }
+}
+
+/* Aplicación de la animación a la barra de navegación */
+.calendar-nav {
+    animation: slideIn 0.3s ease;            /* Animación de 0.3 segundos con suavizado */
+}
+
+/* Configuración base para efectos de botones */
+.nav-btn,
+.view-btn {
+    position: relative;                      /* Posicionamiento relativo para el efecto */
+    overflow: hidden;                        /* Oculta el desbordamiento del efecto */
+}
+
+/* Efecto de onda al hacer clic (pseudoelemento) */
+.nav-btn::after,
+.view-btn::after {
+    content: '';                             /* Contenido necesario para el pseudoelemento */
+    position: absolute;                      /* Posicionamiento absoluto respecto al botón */
+    top: 50%;                               /* Centrado vertical */
+    left: 50%;                              /* Centrado horizontal */
+    width: 100%;                            /* Ancho completo */
+    height: 100%;                           /* Alto completo */
+    background: rgba(182, 102, 210, 0.2);   /* Color morado semi-transparente */
+    border-radius: inherit;                 /* Hereda el border-radius del botón */
+    transform: translate(-50%, -50%) scale(0); /* Inicio escalado a 0 y centrado */
+    opacity: 0;                             /* Comienza invisible */
+    transition: all 0.3s ease;              /* Transición suave para la animación */
+}
+
+/* Efecto al hacer clic en los botones de navegación y vista */
+.nav-btn:active::after,
+.view-btn:active::after {
+    transform: translate(-50%, -50%) scale(1);  /* Expande el efecto al tamaño completo */
+    opacity: 1;                                 /* Hace visible el efecto */
+}
+
+/* Estilo para la fecha actual */
+.current-date {
+    font-size: 1.4rem;                         /* Tamaño de fuente grande */
+    font-weight: 600;                          /* Texto semi-negrita */
+    color: #333;                               /* Color de texto gris oscuro */
+}
+
+/* Contenedor de las vistas del calendario */
+.calendar-views {
+    background: #f8f9fa;                       /* Fondo gris muy claro */
+    padding: 0.4rem;                           /* Relleno interno */
+    border-radius: 10px;                       /* Bordes redondeados */
+    display: flex;                             /* Disposición flexible */
+    gap: 0.3rem;                               /* Espacio entre elementos */
+}
+
+/* Estilos del botón de vista */
+.view-btn {
+    padding: 0.5rem 1rem;                      /* Relleno interno */
+    border: none;                              /* Sin borde */
+    border-radius: 8px;                        /* Bordes redondeados */
+    font-size: 0.85rem;                        /* Tamaño de fuente */
+    color: #666;                               /* Color de texto gris */
+    background: transparent;                    /* Fondo transparente */
+    cursor: pointer;                           /* Cursor tipo puntero */
+    transition: all 0.2s ease;                 /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre el botón de vista */
+.view-btn:hover {
+    background: rgba(182, 102, 210, 0.1);      /* Fondo morado muy suave */
+}
+
+/* Estado activo del botón de vista */
+.view-btn.active {
+    background: #B666D2;                       /* Fondo morado */
+    color: white;                              /* Texto blanco */
+}
+
+/* Estructura principal del calendario */
+.calendar-grid {
+    display: grid;                           /* Disposición en cuadrícula */
+    grid-template-columns: repeat(7, 1fr);   /* 7 columnas iguales (una por día) */
+    gap: 0.8rem;                            /* Espacio entre celdas */
+    max-height: calc(100vh - 250px); /* Altura máxima ajustada al espacio disponible */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    padding-right: 10px; /* Espacio para el scroll */
+}
+
+/* Personalización del scrollbar */
+.calendar-grid::-webkit-scrollbar {
+    width: 6px; /* Ancho del scrollbar */
+}
+
+.calendar-grid::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color del fondo del scrollbar */
+}
+
+.calendar-grid::-webkit-scrollbar-thumb {
+    background: #B666D2; /* Color del scrollbar */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.calendar-grid::-webkit-scrollbar-thumb:hover {
+    background: #9947b9; /* Color del scrollbar al pasar el mouse */
+}
+
+/* Encabezado del calendario */
+.calendar-header {
+    margin-bottom: 1rem;                     /* Margen inferior */
+}
+
+/* Días de la semana en el encabezado */
+.calendar-header span {
+    text-align: center;                      /* Texto centrado */
+    font-size: 0.85rem;                      /* Tamaño de fuente */
+    font-weight: 600;                        /* Texto semi-negrita */
+    color: #666;                             /* Color gris */
+    padding: 0.5rem;                         /* Relleno interno */
+}
+
+/* Celda individual de día */
+.calendar-day {
+    background: #f8f9fa;                     /* Fondo gris claro */
+    border-radius: 12px;                     /* Bordes redondeados */
+    padding: 0.7rem;                         /* Relleno interno */
+    min-height: 100px;                        /* Altura mínima */
+    max-height: 120px; /* Altura máxima */
+    position: relative;                      /* Posicionamiento relativo */
+    transition: all 0.2s ease;               /* Transición suave */
+    border: 1px solid #ddd;           /* Borde transparente */
+    cursor: pointer;                         /* Cursor tipo puntero */
+}
+
+.calendar-day span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.calendar-day div {
+    font-size: 12px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.calendar-day div:hover {
+    text-decoration: underline;
+}
+
+/* Efecto al pasar el mouse sobre un día */
+.calendar-day:hover {
+    background: white;                       /* Fondo blanco */
+    box-shadow: 0 2px 8px rgba(182, 102, 210, 0.1);  /* Sombra suave morada */
+}
+
+/* Estilo para el día seleccionado */
+.calendar-day.selected {
+    background: white;                       /* Fondo blanco */
+    border: 2px solid #B666D2;              /* Borde morado */
+    box-shadow: 0 2px 10px rgba(182, 102, 210, 0.15);  /* Sombra más pronunciada */
+}
+
+/* Estilo para el día actual */
+.calendar-day.today {
+    background: #fff;                        /* Fondo blanco */
+    border: 1px solid rgba(182, 102, 210, 0.2);  /* Borde morado suave */
+}
+
+/* Número del día */
+.day-number {
+    font-size: 0.9rem;                      /* Tamaño de fuente */
+    font-weight: 600;                       /* Texto semi-negrita */
+    color: #333;                            /* Color gris oscuro */
+    margin-bottom: 0.5rem;                  /* Margen inferior */
+}
+
+/* Contenedor de eventos del día */
+.day-events {
+    display: flex;                          /* Disposición flexible */
+    flex-direction: column;                 /* Elementos apilados verticalmente */
+    gap: 0.4rem;                           /* Espacio entre eventos */
+}
+
+/* Elemento individual de evento en el calendario */
+.event-item {
+    background: rgba(182, 102, 210, 0.08);    /* Fondo morado muy suave */
+    padding: 0.4rem 0.6rem;                   /* Relleno interno */
+    border-radius: 6px;                       /* Bordes redondeados */
+    font-size: 0.75rem;                       /* Tamaño de fuente pequeño */
+    color: #B666D2;                           /* Texto color morado */
+    white-space: nowrap;                      /* Evita saltos de línea */
+    overflow: hidden;                         /* Oculta el contenido que desborda */
+    text-overflow: ellipsis;                  /* Muestra puntos suspensivos si el texto es largo */
+    border-left: 2px solid #B666D2;           /* Borde izquierdo morado */
+}
+
+/* Estados especiales de días en el calendario */
+.calendar-day.today {
+    background: #fff;                         /* Fondo blanco */
+    border: 2px solid #B666D2;               /* Borde morado */
+}
+
+/* Estilo para días no disponibles */
+.calendar-day.unavailable {
+    background: rgba(244, 67, 54, 0.05);      /* Fondo rojo muy suave */
+}
+
+/* Número del día para días no disponibles */
+.calendar-day.unavailable .day-number {
+    color: #f44336;                           /* Texto rojo */
+}
+
+/* Botón para mostrar más eventos */
+.more-events {
+    position: absolute;                       /* Posicionamiento absoluto */
+    bottom: 0.5rem;                          /* Distancia desde abajo */
+    right: 0.5rem;                           /* Distancia desde la derecha */
+    width: 22px;                             /* Ancho fijo */
+    height: 22px;                            /* Altura fija */
+    background: #B666D2;                     /* Fondo morado */
+    color: white;                            /* Texto blanco */
+    border: none;                            /* Sin borde */
+    border-radius: 50%;                      /* Forma circular */
+    display: flex;                           /* Disposición flexible */
+    align-items: center;                     /* Centrado vertical */
+    justify-content: center;                 /* Centrado horizontal */
+    font-size: 0.8rem;                       /* Tamaño de fuente */
+    cursor: pointer;                         /* Cursor tipo puntero */
+    transition: all 0.2s ease;               /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre el botón de más eventos */
+.more-events:hover {
+    transform: scale(1.1);                   /* Aumenta ligeramente el tamaño */
+    background: #a052bc;                     /* Cambia a un morado más oscuro */
+}
+
+/* Panel lateral de citas del día */
+.appointments-section {
+    position: fixed;                         /* Posición fija en la ventana */
+    top: 90px;                              /* Distancia desde arriba */
+    right: 20px;                            /* Distancia desde la derecha */
+    width: 360px;                           /* Ancho fijo */
+    background: white;                      /* Fondo blanco */
+    border-radius: 15px;                    /* Bordes redondeados */
+    padding: 20px;                          /* Relleno interno */
+    box-shadow: 0 4px 20px rgba(182, 102, 210, 0.15);  /* Sombra suave */
+    height: calc(100vh - 110px);            /* Altura calculada */
+    display: flex;                          /* Disposición flexible */
+    flex-direction: column;                 /* Elementos apilados verticalmente */
+    gap: 20px; /* Espaciado entre los elementos */
+    max-height: 80vh; /* Limita la altura máxima */
+    overflow-y: auto; /* Agrega scroll si el contenido excede la altura */
+}
+
+#appointmentsForToday, #confirmedAppointments {
+    display: flex;
+    flex-direction: column; /* Organiza las citas en una columna */
+    gap: 15px; /* Espaciado entre las citas */
+}
+
+.appointment-item {
+    display: flex;
+    flex-direction: column; /* Organiza el contenido de cada cita */
+    padding: 15px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo blanco para cada cita */
+    border: 1px solid #ddd; /* Borde para separar las citas */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para diseño */
+}
+
+/* Título del panel de citas */
+.appointments-section h2 {
+    color: #B666D2;                         /* Texto morado */
+    font-size: 0.9rem;                      /* Tamaño de fuente */
+    font-weight: 600;                       /* Texto semi-negrita */
+    margin-bottom: 0.8rem;                  /* Margen inferior */
+    padding-bottom: 0.6rem;                 /* Relleno inferior */
+    border-bottom: 1px solid rgba(182, 102, 210, 0.1);  /* Línea divisoria */
+}
+
+/* Lista de citas */
+.appointments-list {
+    display: flex;                          /* Disposición flexible */
+    flex-direction: column;                 /* Elementos apilados verticalmente */
+    gap: 0.4rem;                           /* Espacio entre citas */
+    overflow-y: auto;                       /* Barra de desplazamiento vertical */
+    padding-right: 6px;                    /* Relleno derecho */
+}
+
+/* Elemento individual de cita */
+.appointment-item {
+    background: #f8f9fa;                    /* Fondo gris claro */
+    border-radius: 8px;                     /* Bordes redondeados */
+    padding: 0.6rem;                        /* Relleno interno */
+    display: grid;                          /* Disposición en cuadrícula */
+    grid-template-columns: 65px 1fr auto;   /* 3 columnas: hora, info, acciones */
+    align-items: center;                    /* Alineación vertical centrada */
+    gap: 0.6rem;                           /* Espacio entre elementos */
+    transition: all 0.3s ease;              /* Transición suave */
+    border: 1px solid transparent;          /* Borde transparente */
+}
+
+/* Efecto al pasar el mouse sobre una cita */
+.appointment-item:hover {
+    background: white;                      /* Fondo blanco */
+    border-color: rgba(182, 102, 210, 0.2); /* Borde morado suave */
+    box-shadow: 0 2px 8px rgba(182, 102, 210, 0.08); /* Sombra suave */
+    transform: translateY(-1px);            /* Elevación ligera */
+}
+
+/* Hora de la cita */
+.appointment-time {
+    color: #B666D2;                        /* Texto morado */
+    font-size: 0.75rem;                    /* Tamaño de fuente pequeño */
+    font-weight: 600;                      /* Texto semi-negrita */
+    background: rgba(182, 102, 210, 0.08); /* Fondo morado muy suave */
+    padding: 0.3rem;                       /* Relleno interno */
+    border-radius: 4px;                    /* Bordes redondeados */
+    text-align: center;                    /* Texto centrado */
+}
+
+/* Contenedor de información de la cita */
+.appointment-info {
+    display: flex;                         /* Disposición flexible */
+    flex-direction: column;                /* Elementos apilados verticalmente */
+    gap: 0.3rem;                          /* Espacio entre elementos */
+    min-width: 0;                         /* Ancho mínimo para permitir truncamiento */
+}
+
+@media (max-width: 768px) {
+    .appointments-section {
+        padding: 10px; /* Reduce el espaciado interno en pantallas pequeñas */
+        gap: 10px; /* Reduce el espaciado entre elementos */
+    }
+
+    .appointment-item {
+        padding: 10px; /* Reduce el espaciado interno de cada cita */
+    }
+}
+
+/* Nombre del cliente en la cita */
+.client-name {
+    font-weight: 600;                        /* Texto semi-negrita */
+    color: #333;                             /* Color gris oscuro */
+    font-size: 0.75rem;                      /* Tamaño de fuente pequeño */
+}
+
+/* Tipo de servicio de la cita */
+.service-type {
+    font-size: 0.7rem;                       /* Tamaño de fuente muy pequeño */
+    color: #666;                             /* Color gris */
+    padding: 0.2rem 0.4rem;                  /* Relleno interno */
+    border-radius: 4px;                      /* Bordes redondeados */
+    background: rgba(182, 102, 210, 0.05);   /* Fondo morado muy suave */
+    display: inline-block;                   /* Comportamiento en línea pero con propiedades de bloque */
+    max-width: fit-content;                  /* Ancho máximo ajustado al contenido */
+}
+
+/* Contenedor de botones de acción */
+.appointment-actions {
+    display: flex;                           /* Disposición flexible */
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0.5rem;                            /* Espacio entre botones */
+    margin-left: auto;
+}
+
+/* Botón de acción base */
+.action-btn {
+    width: 22px;                            /* Ancho fijo */
+    height: 22px;                           /* Altura fija */
+    border-radius: 50%; 
+    margin: 0.2rem;                    /* Bordes redondeados */
+    border: none;                           /* Sin borde */
+    display: flex;                          /* Disposición flexible */
+    align-items: center;                    /* Centrado vertical */
+    justify-content: flex-end;                /* Centrado horizontal */
+    cursor: pointer;                        /* Cursor tipo puntero */
+    transition: transform 0.2s ease, opacity 0.2s ease; /* Animación suave */
+    color: white;                           /* Texto blanco */
+    font-size: 1.2rem;                      /* Tamaño de fuente muy pequeño */
+    opacity: 0.9;                           /* Ligera transparencia */
+}
+
+/* Efecto al pasar el mouse sobre botón de acción */
+.action-btn:hover {
+    opacity: 0.9;                             /* Totalmente opaco */
+    transform: scale(1.1);                 /* Ligero aumento de tamaño */
+}
+
+/* Botón de confirmación */
+.action-btn.confirm {
+    background: #4CAF50;
+    color: white;                    /* Fondo verde */
+}
+
+/* Botón de cancelación */
+.action-btn.cancel {
+    background: #f44336;
+    color: white;                      /* Fondo rojo */
+}
+
+/* Botón de WhatsApp */
+.action-btn.whatsapp {
+    background: #25D366;
+    color: white;                    /* Fondo verde de WhatsApp */
+}
+
+/* Personalización de la barra de desplazamiento */
+.appointments-list::-webkit-scrollbar {
+    width: 3px;                             /* Ancho de la barra */
+}
+
+.appointments-list::-webkit-scrollbar-track {
+    background: #f1f1f1;                    /* Color de fondo del track */
+    border-radius: 10px;                    /* Bordes redondeados */
+}
+
+.appointments-list::-webkit-scrollbar-thumb {
+    background: rgba(182, 102, 210, 0.2);   /* Color morado suave para el thumb */
+    border-radius: 10px;                    /* Bordes redondeados */
+}
+
+/* Texto adicional debajo del encabezado */
+.appointment-details {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    color: #666; /* Color gris */
+    margin-top: 0.5rem; /* Espaciado superior */
+}
+
+/* Animación de entrada para las citas */
+.appointment-item {
+    animation: fadeIn 0.3s ease;            /* Animación suave de aparición */
+}
+
+/* Definición de la animación de aparición gradual */
+@keyframes fadeIn {
+    from {
+        opacity: 0;                /* Estado inicial: completamente transparente */
+        transform: translateY(5px); /* Estado inicial: desplazado 5px hacia abajo */
+    }
+
+    to {
+        opacity: 1;                /* Estado final: completamente visible */
+        transform: translateY(0);   /* Estado final: en su posición original */
+    }
+}
+
+
+/* Ajustes de cada celda de día */
+.calendar-day {
+    padding: 0.6rem;                         /* Establece el relleno interno uniforme de cada celda */
+    min-height: 80px;                        /* Define la altura mínima de cada celda del día */
+}
+
+/* Ajustes de los eventos en el calendario */
+.event-item {
+    padding: 0.3rem 0.5rem;                  /* Relleno interno (vertical y horizontal) */
+    font-size: 0.75rem;                      /* Tamaño de letra pequeño para eventos */
+    margin-bottom: 0.3rem;                   /* Espacio inferior entre eventos */
+}
+
+/* Ajustes de las citas del día */
+.appointment-item {
+    padding: 0.6rem;                         /* Relleno interno uniforme */
+    margin-bottom: 0.4rem;                   /* Espacio inferior entre citas */
+}
+
+/* Ajustes de la navegación del calendario */
+.calendar-nav {
+    margin-bottom: 1rem;                     /* Espacio inferior de la navegación */
+    padding: 0 0.5rem;                       /* Relleno horizontal */
+}
+
+.view-btn {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+}
+
+.view-btn.active {
+    background: #B666D2;
+    color: white;
+}
+
+
+.calendar-header {
+
+    
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 0.8rem;
+}
+
+.calendar-header span {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #666;
+    padding: 0.5rem;
+}
+
+.calendar-day {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 0.7rem;
+    min-height: 85px;
+    position: relative;
+}
+
+.day-number {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.4rem;
+}
+
+.day-events {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.event-item {
+    background: rgba(182, 102, 210, 0.1);
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: #B666D2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Botones y acciones */
+.action-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.action-btn.confirm {
+    background: #4CAF50;
+}
+
+.action-btn.cancel {
+    background: #f44336;
+}
+
+.action-btn.whatsapp {
+    background: #25D366;
+}
+
+/* Scrollbar personalizado */
+.appointments-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.appointments-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.appointments-list::-webkit-scrollbar-thumb {
+    background: #B666D2;
+    border-radius: 10px;
+}
+
+/* Estilos para las indicaciones del calendario */
+.calendar-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-top: 1px solid rgba(182, 102, 210, 0.1);
+    animation: fadeIn 0.5s ease;
+}
+
+.indicator-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.indicator-item:hover {
+    transform: translateY(-2px);
+    background: white;
+    box-shadow: 0 4px 15px rgba(182, 102, 210, 0.1);
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.indicator-item:hover .indicator-dot {
+    transform: scale(1.2);
+}
+
+.indicator-dot.available {
+    background: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+.indicator-dot.occupied {
+    background: #f44336;
+    box-shadow: 0 0 8px rgba(244, 67, 54, 0.3);
+}
+
+.indicator-dot.no-service {
+    background: #ffc107;
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.3);
+}
+
+.indicator-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #666;
+    letter-spacing: 0.5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Modal - Contenedor principal */
+#appointmentDetailsModal {
+    display: none;                          /* Oculto por defecto */
+    position: fixed;                        /* Posición fija en la ventana */
+    z-index: 1000;                          /* Nivel de apilamiento alto */
+    top: 0;                                 /* Alineado al borde superior */
+    left: 0;                                /* Alineado al borde izquierdo */
+    width: 100%;                            /* Ocupa todo el ancho */
+    height: 100%;                           /* Ocupa toda la altura */
+    background-color: rgba(0, 0, 0, 0.5);   /* Fondo negro semi-transparente */
+    display: flex;                          /* Disposición flexible */
+    align-items: center;                    /* Centrado vertical */
+    justify-content: center;                /* Centrado horizontal */
+    overflow: auto;                         /* Permite desplazamiento si es necesario */
+}
+
+/* Modal - Contenido */
+#appointmentDetailsModal .modal-content {
+    background-color: #fff;                 /* Fondo blanco */
+    padding: 20px;                          /* Relleno interno */
+    border-radius: 12px;                    /* Bordes redondeados */
+    width: 100%;                             /* Ancho del modal */
+    max-width: 600px;                       /* Ancho máximo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    animation: fadeInModal 0.3s ease;       /* Animación de entrada */
+}
+
+/* Botón de cierre */
+.close-btn {
+    font-size: 1.5rem;                      /* Tamaño de fuente grande */
+    font-weight: bold;                      /* Texto en negrita */
+    color: #333;                            /* Color gris oscuro */
+    cursor: pointer;                        /* Cursor tipo puntero */
+    position: absolute;                     /* Posición absoluta */
+    top: 15px;                              /* Distancia desde arriba */
+    right: 20px;                            /* Distancia desde la derecha */
+    transition: color 0.2s ease;            /* Transición suave para el color */
+}
+
+.close-btn:hover {
+    color: #B666D2;                         /* Cambia a morado al pasar el mouse */
+}
+
+/* Día no disponible en el calendario */
+.calendar-day.unavailable {
+    background-color: #ffc107;             /* Fondo amarillo */
+    cursor: not-allowed;                   /* Cursor de no permitido */
+    opacity: 0.7;                          /* Ligera transparencia */
+    border: 1px solid #e0a800;             /* Borde amarillo oscuro */
+}
+
+.calendar-day.unavailable:hover {
+    transform: none;                       /* Sin efecto de hover */
+    box-shadow: none;                      /* Sin sombra */
+}
+
+/* Animación de entrada del modal */
+@keyframes fadeInModal {
+    from {
+        opacity: 0;                        /* Comienza invisible */
+        transform: scale(0.9);             /* Comienza ligeramente reducido */
+    }
+    to {
+        opacity: 1;                        /* Termina completamente visible */
+        transform: scale(1);               /* Termina en tamaño normal */
+    }
+}
+
+#availabilityModal {
+    display: none;                          /* Oculto por defecto */
+    position: fixed;                        /* Posición fija en la ventana */
+    z-index: 1000;                          /* Nivel de apilamiento alto */
+    top: 0;                                 /* Alineado al borde superior */
+    left: 0;                                /* Alineado al borde izquierdo */
+    width: 100%;                            /* Ocupa todo el ancho */
+    height: 100%;                           /* Ocupa toda la altura */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#availabilityModal .modal-content {
+    background-color: #fff;                 /* Fondo blanco */
+    padding: 20px;                          /* Relleno interno */
+    border-radius: 12px;                    /* Bordes redondeados */
+    width: 500px;                           /* Ancho fijo */
+    max-height: 70%;                        /* Altura máxima */
+    overflow-y: auto;                       /* Habilita el scroll vertical */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    position: relative;                     /* Posicionamiento relativo */
+}
+
+#addAppointmentModal {
+    display: none;                          /* Oculto por defecto */
+    position: fixed;                        /* Posición fija en la ventana */
+    z-index: 1000;                          /* Nivel de apilamiento alto */
+    top: 0;                                 /* Alineado al borde superior */
+    left: 0;                                /* Alineado al borde izquierdo */
+    width: 100%;                            /* Ocupa todo el ancho */
+    height: 100%;                           /* Ocupa toda la altura */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#addAppointmentModal .modal-content {
+    background-color: #fff;                 /* Fondo blanco */
+    padding: 20px;                          /* Relleno interno */
+    border-radius: 12px;                    /* Bordes redondeados */
+    width: 500px;                           /* Ancho fijo */
+    max-height: 70%;                        /* Altura máxima */
+    overflow-y: auto;                       /* Habilita el scroll vertical */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    position: relative;                     /* Posicionamiento relativo */
+}

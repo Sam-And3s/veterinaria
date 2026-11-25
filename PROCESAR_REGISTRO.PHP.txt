@@ -1,0 +1,69 @@
+PROCESAR_REGISTRO.PHP
+
+<?php
+// Incluir el archivo de conexión a la base de datos
+require_once 'conexion.php';
+
+// Verificar si los datos POST están presentes
+if (isset($_POST['documento_usu']) && isset($_POST['tipo_doc_usu']) && isset($_POST['nom_usu']) && isset($_POST['apell_usu']) && isset($_POST['num_usu']) && isset($_POST['direc_usu']) && isset($_POST['correo_usu']) && isset($_POST['contra_usu'])  && isset($_POST['id_rol'])  && isset($_POST['id_estado'])) {
+
+    // Sanitizar los datos de entrada para evitar inyecciones SQL
+    $documento_usu = mysqli_real_escape_string($conexion, $_POST['documento_usu']); // Número de documento
+    $tipo_doc_usu = mysqli_real_escape_string($conexion, $_POST['tipo_doc_usu']); // ID del tipo de documento
+    $nom_usu = mysqli_real_escape_string($conexion, $_POST['nom_usu']); // Nombre del usuario
+    $apell_usu = mysqli_real_escape_string($conexion, $_POST['apell_usu']); // Apellido del usuario
+    $num_usu = mysqli_real_escape_string($conexion, $_POST['num_usu']); // Teléfono del usuario
+    $direc_usu = mysqli_real_escape_string($conexion, $_POST['direc_usu']); // direccion del usuario
+    $correo_usu = mysqli_real_escape_string($conexion, $_POST['correo_usu']); // correo del usuario
+    $contra_usu = mysqli_real_escape_string($conexion, $_POST['contra_usu']); // Contraseña del usuario
+    $id_rol = mysqli_real_escape_string($conexion, $_POST['id_rol']); // ID del rol del usuario
+    $id_estado = mysqli_real_escape_string($conexion, $_POST['id_estado']); // ID del estado del usuario
+
+    // Verificar si el número de documento ya existe en la base de datos
+    $query = "SELECT documento_usu FROM usuario WHERE documento_usu = ?";
+    $stmt = $conexion->prepare($query);
+    $stmt->bind_param("s", $documento_usu); // Vincular el número de documento como parámetro
+    $stmt->execute();
+    $stmt->store_result(); // Almacenar el resultado para verificar si hay filas
+
+    // Si el número de documento ya existe, redirigir con un mensaje de error
+    if ($stmt->num_rows > 0) {
+        header("Location: sesion.php?mensaje=Número de documento ya registrado.&tipo=error");
+        exit(); // Terminar la ejecución del script
+    }
+
+    $stmt->close(); // Cerrar la consulta preparada
+
+    // Verificar si el correo electrónico ya existe en la base de datos
+    $query = "SELECT correo_usu FROM usuario WHERE correo_usu = ?";
+    $stmt = $conexion->prepare($query);
+    $stmt->bind_param("s", $correo_usu); // Vincular el correo electrónico como parámetro
+    $stmt->execute();
+    $stmt->store_result(); // Almacenar el resultado para verificar si hay filas
+
+    // Si el correo electrónico ya existe, redirigir con un mensaje de error
+    if ($stmt->num_rows > 0) {
+        header("Location: sesion.php?mensaje=Correo electrónico ya registrado.&tipo=error");
+        exit(); // Terminar la ejecución del script
+    }
+
+    $stmt->close(); // Cerrar la consulta preparada
+
+    // Hashear la contraseña para almacenarla de forma segura
+    $hashed_password = password_hash($contra_usu, PASSWORD_DEFAULT);
+
+    // Insertar el nuevo usuario en la base de datos
+    $insertar = mysqli_query($conexion, "INSERT INTO usuario (documento_usu, tipo_doc_usu, nom_usu, apell_usu, num_usu, direc_usu, correo_usu, contra_usu,  id_rol, id_estado) 
+                                         VALUES ('$documento_usu', '$tipo_doc_usu', '$nom_usu', '$apell_usu', '$num_usu', '$direc_usu', '$correo_usu', '$contra_usu', '$id_rol' '$id_estado')") 
+                                         or die("Error al registrar el usuario"); // Manejar errores en la inserción
+}
+
+// Cerrar la conexión a la base de datos
+mysqli_close($conexion);
+
+// Redirigir al formulario de registro de usuarios
+header("Location: sesion.php");
+
+// Terminar la ejecución del script
+exit();
+?>

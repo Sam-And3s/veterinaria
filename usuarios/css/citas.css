@@ -1,0 +1,622 @@
+/* Estilos generales para la sección "Sobre Nosotros" */
+:root {
+    --primary-color: #DEF8EA;
+    /* Lavanda pastel */
+    --secondary-color: #7DD181;
+    /* Rosa pastel claro */
+    --accent-color: #235610;
+    /* Morado medio */
+    --text-color: #235610;
+    /* Morado oscuro */
+    --light-text: #161616;
+    /* Blanco rosado */
+    --gradient-1: linear-gradient(135deg, #7DD181, #DEF8EA);
+    --gradient-2: linear-gradient(135deg, #DEF8EA, #7DD181);
+}
+
+/* Hero Section - Estilo para la sección principal de la página */
+.appointment-hero {
+    height: 100vh;                /* Altura completa de la ventana del navegador */
+    display: grid;                /* Usa layout grid */
+    grid-template-columns: 1fr 1fr;  /* Divide en dos columnas iguales */
+    gap: 2rem;                    /* Espacio entre columnas */
+    padding: 0 5%;               /* Padding horizontal del 5% */
+    background: #DEF8EA;         /* Color de fondo suave */
+}
+
+/* Estilos para el contenido del hero */
+.hero-content {
+    display: flex;                /* Usa flexbox para el layout */
+    flex-direction: column;       /* Apila los elementos verticalmente */
+    justify-content: center;      /* Centra verticalmente el contenido */
+    padding-right: 2rem;         /* Espacio a la derecha */
+}
+
+/* Estilos para el título principal del hero */
+.hero-content h1 {
+    font-size: 3.5rem;           /* Tamaño de fuente grande */
+    color: #235610;                 /* Color gris oscuro */
+    margin-bottom: 1rem;         /* Espacio inferior */
+    animation: fadeInLeft 1s ease;  /* Animación de entrada desde la izquierda */
+}
+
+/* Estilos para el párrafo del hero */
+.hero-content p {
+    font-size: 1.2rem;           /* Tamaño de fuente mediano */
+    color: #235610;                 /* Color gris medio */
+    animation: fadeInLeft 1s ease 0.2s;  /* Animación con retraso de 0.2s */
+    opacity: 0;                  /* Inicia invisible */
+    animation-fill-mode: forwards;  /* Mantiene el estado final de la animación */
+}
+
+/* Estilos para el contenedor del video */
+.hero-video {
+    position: relative;          /* Posicionamiento relativo para elementos absolutos internos */
+    display: flex;              /* Usa flexbox para centrar */
+    align-items: center;        /* Centra verticalmente */
+    justify-content: center;    /* Centra horizontalmente */
+    width: 85%;                /* Control del ancho */
+    height: 80%;               /* Control de la altura */
+    margin: auto;              /* Centra el contenedor */
+}
+
+/* Botón de diseño con efectos */
+.design-now {
+    padding: 1rem 2.5rem;
+    background: var(--accent-color);
+    border: none;
+    border-radius: 30px;
+    color: var(--light-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px #235610; /* Sombra reducida */
+}
+
+.design-now:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px #235610; /* Sombra hover reducida */
+}
+
+/* Estilos para el elemento video */
+.hero-video video {
+    width: 100%;              /* Ocupa todo el ancho del contenedor */
+    height: 100%;             /* Ocupa toda la altura del contenedor */
+    object-fit: cover;        /* Ajusta el video manteniendo proporciones */
+    border-radius: 20px;      /* Bordes redondeados */
+}
+
+/* Estilos para el botón de control de sonido */
+.sound-toggle {
+    position: absolute;          /* Posicionamiento absoluto dentro del contenedor de video */
+    bottom: 20px;               /* 20px desde el borde inferior */
+    right: 20px;                /* 20px desde el borde derecho */
+    background: #DEF8EA;  /* Fondo blanco semi-transparente */
+    border: none;               /* Sin borde */
+    border-radius: 50%;         /* Forma circular */
+    width: 40px;                /* Ancho fijo */
+    height: 40px;               /* Altura fija */
+    cursor: pointer;            /* Cursor tipo puntero */
+    transition: all 0.3s ease;  /* Transición suave para efectos */
+}
+
+/* Estilos para la sección de términos y condiciones */
+.terms-section {
+    padding: 6rem 5%;           /* Espaciado interior */
+    display: grid;              /* Layout en grid */
+    grid-template-columns: 1fr 1fr;  /* Dos columnas iguales */
+    gap: 4rem;                 /* Espacio entre columnas */
+    background: #DEF8EA;         /* Fondo blanco */
+}
+
+/* Título de la sección */
+.terms-content h2 {
+    font-size: 2.5rem;         /* Tamaño de fuente grande */
+    color: #235610;               /* Color gris oscuro */
+    margin-bottom: 2rem;       /* Espacio inferior */
+}
+
+/* Lista de términos */
+.terms-text ul {
+    list-style: none;          /* Sin viñetas */
+    padding: 0;                /* Sin padding */
+}
+
+.terms-text li {
+    display: flex;             /* Alineación de ícono y texto */
+    align-items: center;       /* Centrado vertical */
+    margin-bottom: 1rem;       /* Espacio entre items */
+    font-size: 1.1rem;         /* Tamaño de texto */
+    color: #161616;               /* Color gris medio */
+}
+
+/* Nuevo estilo para el texto introductorio de los términos */
+.intro-text-terms {
+    color: #161616; /* Color solicitado */
+    font-weight: bold; /* Opcional: si quieres que resalte un poco más */
+    font-size: 1.1rem; /* Opcional: para mantener consistencia con los items de la lista */
+}
+
+/* Íconos en la lista */
+.terms-text i {
+    color: #235610;           /* Color morado */
+    margin-right: 1rem;       /* Espacio a la derecha */
+    font-size: 1.5rem;        /* Tamaño del ícono */
+}
+
+/* Contenedor de imágenes */
+.terms-images {
+    width: 100%;              /* Ancho completo */
+    height: 400px;            /* Altura fija */
+    border-radius: 20px;      /* Bordes redondeados */
+    overflow: hidden;         /* Oculta exceso de imagen */
+}
+
+/* Imágenes dentro del contenedor */
+.terms-images img {
+    width: 100%;              /* Ancho completo */
+    height: 100%;             /* Altura completa */
+    object-fit: cover;        /* Ajuste de imagen */
+}
+
+/* Estilos para la sección del calendario */
+.calendar-section {
+    padding: 6rem 5%;           /* Espaciado interior */
+    background: #f8f9ff;        /* Fondo gris muy claro */
+    text-align: center;         /* Texto centrado */
+}
+
+/* Título de la sección */
+.section-title {
+    font-size: 3.2rem;          /* Tamaño de fuente grande */
+    color: #333;                /* Color gris oscuro */
+    margin-bottom: 2.5rem;      /* Espacio inferior */
+    position: relative;         /* Para la línea decorativa */
+    display: inline-block;      /* Ajusta al contenido */
+    animation: fadeInUp 0.8s ease; /* Animación de entrada */
+}
+
+/* Línea decorativa debajo del título */
+.section-title::after {
+    content: '';                /* Elemento decorativo */
+    position: absolute;         /* Posicionamiento absoluto */
+    bottom: -25px;             /* 25px debajo del título */
+    left: 50%;                 /* Centrado horizontal */
+    transform: translateX(-50%);/* Ajuste de centrado */
+    width: 80px;               /* Ancho de la línea */
+    height: 4px;               /* Grosor de la línea */
+    background: #C084FC;       /* Color morado */
+    border-radius: 2px;        /* Bordes redondeados */
+    animation: lineGrow 0.8s ease; /* Animación de crecimiento */
+}
+
+/* Contenedor principal del calendario */
+.calendar-wrapper {
+    display: grid;              /* Layout en grid */
+    grid-template-columns: 1fr 500px 1fr; /* Tres columnas */
+    gap: 2rem;                  /* Espacio entre columnas */
+    align-items: start;         /* Alineación superior */
+    max-width: 1200px;          /* Ancho máximo */
+    margin: 0 auto;             /* Centrado horizontal */
+    position: relative;         /* Para z-index */
+    z-index: 1;                /* Nivel de apilamiento */
+}
+
+/* Contenedor del calendario */
+.calendar-container {
+    max-width: 500px;           /* Ancho máximo */
+    margin: 0 auto;             /* Centrado */
+    padding: 2rem;              /* Espaciado interior */
+    background: white;          /* Fondo blanco */
+    border-radius: 20px;        /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: relative;         /* Para z-index */
+    z-index: 2;                /* Por encima del wrapper */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Decoraciones laterales */
+.calendar-decoration {
+    display: flex;              /* Flexbox */
+    justify-content: center;    /* Centrado horizontal */
+    align-items: flex-start;    /* Alineación superior */
+    padding-top: 2rem;         /* Espacio superior */
+}
+
+/* Imágenes decorativas */
+.decoration-image {
+    max-width: 100%;           /* Ancho máximo */
+    height: auto;              /* Altura automática */
+    max-height: 300px;         /* Altura máxima */
+    object-fit: contain;       /* Ajuste de imagen */
+    opacity: 0;               /* Inicia invisible */
+    animation: fadeIn 1s ease forwards; /* Animación de aparición */
+}
+
+/* Retrasos en la animación */
+.calendar-decoration.left .decoration-image {
+    animation-delay: 0.3s;     /* Retraso izquierda */
+}
+
+.calendar-decoration.right .decoration-image {
+    animation-delay: 0.6s;     /* Retraso derecha */
+}
+
+/* Animación de aparición con desplazamiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;              /* Comienza invisible */
+        transform: translateY(20px);  /* Desplazamiento hacia arriba */
+    }
+    to {
+        opacity: 1;              /* Termina visible */
+        transform: translateY(0);  /* Sin desplazamiento */
+    }
+}
+
+/* Ajustes responsivos para pantallas medianas */
+@media (max-width: 1024px) {
+    .calendar-wrapper {
+        grid-template-columns: 1fr;  /* Cambia a una columna */
+    }
+    .calendar-decoration {
+        display: none;           /* Oculta decoraciones */
+    }
+}
+
+/* Animación de crecimiento de línea */
+@keyframes lineGrow {
+    from {
+        width: 0;               /* Comienza sin ancho */
+    }
+    to {
+        width: 80px;            /* Termina con 80px de ancho */
+    }
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.8rem;      /* Reduce tamaño del título */
+    }
+}
+
+.calendar-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.date-input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.calendar-view {
+    margin-bottom: 2rem;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.current-month {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    position: relative;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.day:not(.empty) {
+    background: #f8f9fa;
+}
+
+.day.selected {
+    background: #C084FC !important;
+    color: white;
+}
+
+.day-status {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.day-status.available {
+    background: #3B82F6;
+}
+
+.day-status.unavailable {
+    background: #EF4444;
+}
+
+.day-status.closed {
+    background: #F59E0B;
+}
+
+.day.unavailable,
+.day.closed {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Update the legend styles */
+.calendar-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #eee;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.available {
+    background: #3B82F6;
+}
+
+.status-dot.unavailable {
+    background: #EF4444;
+}
+
+.status-dot.closed {
+    background: #F59E0B;
+}
+
+/* Update button styles */
+.schedule-btn {
+    width: auto;
+    min-width: 200px;
+    max-width: 250px;
+    padding: 1rem 2.5rem;
+    background: #C084FC;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    pointer-events: none;
+    margin: 3rem auto 0;
+    display: block;
+}
+
+.schedule-btn:not(:disabled) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.schedule-btn:not(:disabled):hover {
+    background: #a855f7;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(192, 132, 252, 0.3);
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        padding: 1rem;
+    }
+
+    .calendar-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* Estilo general para los días del calendario */
+.calendar-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer; /* Cambia el cursor a pointer */
+}
+
+/* Estilo para el número del día */
+.day-number {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Contenedor para el punto de estado */
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+/* Colores para los puntos de estado */
+.status-dot.available {
+    background-color: #4caf50; /* Azul: Disponible */
+}
+
+.status-dot.closed {
+    background-color: #ffeb3b; /* Amarillo: Sin Servicio */
+}
+
+.status-dot.no_slots {
+    background-color: #f44336; /* Rojo: Sin Cupos */
+}
+
+/* Estilos para el modal en general */
+#addAppointmentModal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Se mantiene en su lugar incluso al hacer scroll */
+    z-index: 1; /* Se asegura de que esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo de la ventana */
+    height: 100%; /* Alto completo de la ventana */
+    overflow: auto; /* Habilita el scroll si el contenido es muy largo */
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro con opacidad */
+}
+
+/* Estilos para el contenido del modal */
+#addAppointmentModal .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del contenido del modal */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position: relative; /* Para posicionar el botón de cierre */
+}
+
+/* Estilos para el botón de cierre */
+#addAppointmentModal .close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#addAppointmentModal .close-btn:hover,
+#addAppointmentModal .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el título del modal */
+#addAppointmentModal h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+#addAppointmentModal form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para las etiquetas (labels) */
+#addAppointmentModal label {
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Estilos para los campos de entrada de texto (input type="text") */
+#addAppointmentModal input[type=text] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho */
+    font-size: 16px;
+}
+
+/* Estilos para los selectores (select) */
+#addAppointmentModal select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    appearance: none; /* Quita los estilos por defecto del navegador */
+    background-image: url('data:image/svg+xml;utf8,<svg fill=\'#333\' height=\'24\' viewBox=\'0 0 24 24\' width=\'24\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+    padding-right: 25px; /* Espacio para la flecha */
+}
+
+/* Estilos para el área de texto (textarea) */
+#addAppointmentModal textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Estilos para el botón de guardar */
+#addAppointmentModal button[type=submit] {
+    background-color: #5cb85c; /* Verde */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#addAppointmentModal button[type=submit]:hover {
+    background-color: #4cae4c;
+}

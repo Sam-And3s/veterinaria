@@ -1,0 +1,781 @@
+/* Variables de colores */
+:root {
+    --primary: #B666D2;
+    --primary-dark: #A855F7;
+    --secondary: #F3E5F9;
+    --text-dark: #333333;
+    --white: #FFFFFF;
+    --gray-light: #F9FAFB;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor principal de servicios */
+.services-admin-container {
+    padding: 2.5rem;
+    margin: 15px 1rem;
+    width: calc(100% - 280px); /* Ajustado para extender más hacia los lados */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(182, 102, 210, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+/* Grid de planes */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    position: relative;
+}
+
+/* Precio mejorado */
+.plan-price {
+    text-align: center;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.currency {
+    font-size: 2rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.price-input {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    border: none;
+    background: transparent;
+    width: 180px;
+    text-align: center;
+}
+
+/* Botón nuevo plan mejorado */
+.add-plan-btn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(182, 102, 210, 0.2);
+}
+
+.add-plan-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: var(--primary-dark);
+    box-shadow: 0 6px 20px rgba(182, 102, 210, 0.3);
+}
+
+.add-plan-btn i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.add-plan-btn:hover i {
+    transform: rotate(90deg);
+}
+
+/* Tarjeta nueva animada */
+@keyframes newCardPulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+.new-plan-card {
+    border: 2px dashed var(--primary);
+    background: rgba(182, 102, 210, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    cursor: pointer;
+    animation: newCardPulse 2s infinite;
+    transition: all 0.3s ease;
+}
+
+.new-plan-card:hover {
+    animation: none;
+    background: rgba(182, 102, 210, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Ajustes responsive */
+@media (max-width: 1400px) {
+    .services-admin-container {
+        width: calc(100% - 200px);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-admin-container {
+        width: 100%;
+        margin: 15px 0;
+        padding: 1.5rem;
+    }
+}
+
+/* Encabezado mejorado */
+.services-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary);
+    position: relative;
+}
+
+.services-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--text-dark), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+/* Tabs mejorados */
+/* Tabs centrados */
+.services-tabs {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 0.8rem;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-btn {
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    background: transparent;
+    border-radius: 10px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 150px;
+    text-align: center;
+}
+
+/* Precio mejorado y visible */
+.plan-price {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--secondary);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.currency {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.price-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.price-input {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    border: none;
+    background: transparent;
+    width: 150px;
+    text-align: center;
+}
+
+.tab-btn:hover:not(.active) {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(182, 102, 210, 0.15);
+}
+
+.tab-btn.active {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(182, 102, 210, 0.25);
+}
+
+/* Tarjetas de plan mejoradas */
+.plan-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(182, 102, 210, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(182, 102, 210, 0.15);
+    border-color: var(--primary);
+}
+
+.plan-price {
+    margin: 2rem 0;
+    position: relative;
+}
+
+.price-input {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Botones mejorados */
+.add-plan-btn {
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(182, 102, 210, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.add-plan-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(182, 102, 210, 0.3);
+}
+
+/* Lista de servicios mejorada */
+.services-list li {
+    padding: 0.8rem 0;
+    color: var(--text-dark);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.services-list li:hover {
+    transform: translateX(5px);
+    color: var(--primary);
+}
+
+.services-list li::before {
+    content: '✓';
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Panel de servicios */
+.service-panel {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.service-panel.active {
+    display: block;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.add-plan-btn {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.add-plan-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Slider de planes */
+/* Estilos para el slider */
+.plans-slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 40px;
+    margin: 20px 0;
+}
+
+.plans-grid {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px 0;
+}
+
+.plans-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn.prev {
+    left: 0;
+}
+
+.slider-btn.next {
+    right: 0;
+}
+
+.slider-btn:hover {
+    background: var(--primary-dark);
+}
+
+.plan-card {
+    min-width: 300px;
+    flex-shrink: 0;
+}
+
+/* Tarjeta de plan */
+.plan-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.plan-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    color: var(--text-dark);
+    width: 70%;
+}
+
+.plan-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.plan-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+    color: var(--primary);
+    background: var(--secondary);
+}
+
+.delete-btn:hover {
+    color: #dc2626;
+    background: #fee2e2;
+}
+
+.plan-price {
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.currency {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+}
+
+.price-input {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    border: none;
+    background: transparent;
+    width: 150px;
+    text-align: center;
+}
+
+.plan-services {
+    margin: 1.5rem 0;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+}
+
+.services-list li {
+    padding: 0.5rem 0;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.services-list li::before {
+    content: '✓';
+    color: var(--primary);
+}
+
+.plan-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--secondary);
+}
+
+/* Toggle de estado */
+.status-toggle {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.status-toggle input {
+    display: none;
+}
+
+.slider {
+    padding: 0.5rem 1rem;
+    background: #e5e7eb;
+    border-radius: 20px;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.status-toggle input:checked + .slider {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.save-btn {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Estilos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Estilos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 3% auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+    animation: slideIn 0.3s ease;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 15px 15px 0 0;
+    border-bottom: 1px solid rgba(182, 102, 210, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.modal-header h3 {
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close:hover {
+    color: var(--primary);
+    background-color: rgba(156, 39, 176, 0.1);
+}
+
+.modal-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 1.5rem;
+    background: var(--white);
+    border-top: 1px solid rgba(182, 102, 210, 0.1);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Estilos de los botones */
+.cancel-btn, .submit-btn,
+.btn-cancel, .btn-save {
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn, .btn-cancel {
+    background: var(--secondary);
+    color: var(--text-dark);
+}
+
+.submit-btn, .btn-save {
+    background: var(--primary);
+    color: white;
+}
+
+.cancel-btn:hover, .btn-cancel:hover {
+    background: #E9D5F0;
+}
+
+.submit-btn:hover, .btn-save:hover {
+    background: var(--primary-dark);
+}
+
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    margin-bottom: 80px; /* Espacio para los botones fijos */
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(182, 102, 210, 0.2);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(182, 102, 210, 0.1);
+}
+
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+.toggle-password:hover {
+    color: var(--primary);
+}
+.role-select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(182, 102, 210, 0.2);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: white;
+    cursor: pointer;
+}
+/* Estilos para los botones del slider */
+.carousel-prev,
+.carousel-next {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    border-radius: 50%; /* Forma circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al pasar el mouse */
+    transform: translateY(-50%) scale(1.1); /* Efecto de zoom */
+}
+
+.carousel-prev-icon,
+.carousel-next-icon {
+    width: 20px;
+    height: 20px;
+    background-size: 100%; /* Asegura que el ícono se ajuste al contenedor */
+    filter: invert(1); /* Cambia el color del ícono a blanco */
+}
+
+.carousel-prev {
+    left: -60px; /* Ajusta la posición del botón izquierdo */
+}
+
+.carousel-next {
+    right: -60px; /* Ajusta la posición del botón derecho */
+}

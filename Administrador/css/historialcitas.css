@@ -1,0 +1,212 @@
+.historial-container {
+    padding: 2rem;
+    margin: 7rem auto 2rem; /* Aumentado el margen superior para separar de la navbar */
+    max-width: 1200px; /* Ancho máximo fijo para centrar */
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative; /* Asegura que esté por encima de la navbar */
+    z-index: 1; /* Evita que se vea por detrás de la navbar */
+}
+
+.table-container {
+    width: 100%;
+    margin: 0 auto; /* Centra la tabla */
+    overflow-x: auto;
+}
+
+.historial-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.8rem;
+    margin: 0 auto; /* Centra la tabla dentro del contenedor */
+}
+
+/* Ajuste de los encabezados para mejor distribución */
+.historial-table th {
+    padding: 1.2rem 2rem;
+    text-align: left;
+    background: #f8f9ff;
+    color: #333;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Ajuste de las celdas para mejor distribución */
+.historial-table td {
+    padding: 1.2rem 2rem;
+    text-align: left;
+    background: white;
+    border-bottom: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .historial-container {
+        margin: 6rem 1rem 1rem;
+        padding: 1rem;
+    }
+}
+
+.historial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.historial-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.header-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.filter-select, .date-filter {
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #C084FC;
+    border-radius: 25px;
+    background: white;
+    color: #333;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.export-btn {
+    padding: 0.8rem 1.2rem;
+    background: #C084FC;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.export-btn i {
+    font-size: 1.1rem;
+}
+
+.export-btn:hover {
+    background: #a855f7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(192, 132, 252, 0.2);
+}
+
+.table-container {
+    max-height: 500px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+}
+
+.pagina-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #C084FC;
+    background: transparent;
+    color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagina-btn.activa,
+.pagina-btn:hover {
+    background: #C084FC;
+    color: white;
+}
+
+.historial-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.8rem;
+}
+
+.historial-table th {
+    background: #f8f9ff;
+    color: #333;
+    font-weight: 500;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.historial-table td {
+    padding: 1.5rem 2rem;
+    background: white;
+    border-bottom: 1px solid rgba(192, 132, 252, 0.2);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.historial-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.historial-table tbody tr:hover {
+    background: rgba(192, 132, 252, 0.05);
+    transform: translateY(-2px);
+}
+
+/* Estados de citas */
+.estado-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.estado-completada {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.estado-pendiente {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.estado-cancelada {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+@media (max-width: 768px) {
+    .historial-container {
+        margin: 5rem 1rem 1rem;
+        padding: 1rem;
+    }
+
+    .historial-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .header-controls {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .filter-select, .date-filter {
+        flex: 1;
+        min-width: 150px;
+    }
+}

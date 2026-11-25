@@ -1,0 +1,1183 @@
+/* Definición de variables de color y estilos globales */
+:root {
+    --primary: #B666D2;      /* Color principal (morado) */
+    --primary-dark: #9B4FA8; /* Variante oscura del color principal */
+    --secondary: #F3E5F9;    /* Color secundario (morado claro) */
+    --text-dark: #2D3748;    /* Color de texto oscuro */
+    --text-light: #718096;   /* Color de texto claro */
+    --white: #FFFFFF;        /* Color blanco */
+    --success: #48BB78;      /* Color para estados exitosos (verde) */
+    --danger: #F56565;       /* Color para estados de error (rojo) */
+}
+
+/* Estilos del contenedor principal del contenido */
+.main-content {
+    padding: 2rem 3rem;      /* Espaciado interno: 2rem arriba/abajo, 3rem izquierda/derecha */
+    margin-left: 250px;      /* Margen izquierdo para dejar espacio a la barra lateral */
+    margin-top: 3.5rem;      /* Margen superior para dejar espacio a la barra de navegación */
+}
+
+/* Contenedor principal de la sección de personal */
+.personal-container {
+    background: white;          /* Fondo blanco */
+    border-radius: 25px;        /* Esquinas redondeadas */
+    padding: 3rem 4rem;         /* Espaciado interno: 3rem arriba/abajo, 4rem izquierda/derecha */
+    box-shadow: 0 10px 40px rgba(182, 102, 210, 0.08);  /* Sombra suave con color principal */
+    margin: 1.5rem;             /* Margen exterior en todos los lados */
+    min-height: 80vh;           /* Altura mínima del 80% de la altura de la ventana */
+}
+
+/* Contenedor de los paneles de administradores y equipo */
+.panels-container {
+    position: relative;         /* Posicionamiento relativo para los paneles absolutos */
+    width: 100%;               /* Ancho completo */
+    min-height: 80vh;          /* Altura mínima igual que el contenedor padre */
+}
+
+/* Estilo base para los paneles (ocultos por defecto) */
+.panel {
+    position: absolute;         /* Posicionamiento absoluto para superposición */
+    width: 100%;               /* Ocupa todo el ancho disponible */
+    height: 100%;              /* Ocupa toda la altura disponible */
+    top: 0;                    /* Alineado al borde superior */
+    left: 0;                   /* Alineado al borde izquierdo */
+    opacity: 0;                /* Completamente transparente */
+    visibility: hidden;        /* Oculto y no interactuable */
+    background: white;         /* Fondo blanco */
+    border-radius: 25px;       /* Esquinas redondeadas */
+    transition: all 0.3s ease-in-out;  /* Animación suave para cambios */
+}
+
+/* Estilo para el panel activo/visible */
+.panel.active {
+    position: relative;        /* Cambia a posicionamiento relativo */
+    opacity: 1;               /* Totalmente visible */
+    visibility: visible;      /* Permite interacción */
+}
+
+/* Estilos compartidos para ambos paneles (administradores y equipo veterinario) */
+#admins-panel,
+#team-panel {
+    display: flex;                /* Establece un contenedor flexible */
+    flex-direction: column;       /* Organiza los elementos en columna */
+    gap: 2rem;                   /* Espacio de 2rem entre elementos */
+    padding: 0;                  /* Sin relleno interno */
+    margin: 0;                   /* Sin márgenes externos */
+}
+
+/* Estilo del encabezado de cada panel */
+.panel-header {
+    display: flex;               /* Contenedor flexible */
+    justify-content: space-between;  /* Distribuye espacio entre elementos */
+    align-items: center;         /* Centra elementos verticalmente */
+    width: 100%;                /* Ocupa todo el ancho disponible */
+    margin-bottom: 2.5rem;      /* Espacio inferior de 2.5rem */
+}
+
+.panel-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.search-filters {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 1.2rem 2rem;
+    background: var(--secondary);
+    border-radius: 15px;
+}
+
+.admins-grid,
+.team-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Estilos del botón consistentes */
+.add-btn {
+    padding: 0.7rem 1.5rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    font-weight: 500;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(182, 102, 210, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Ajuste del espaciado en el panel header */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 0.5rem 0;
+}
+
+.panel-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    position: relative;
+    margin: 0;
+    padding-right: 2rem;
+}
+
+/* Ajuste de la barra de búsqueda y filtros */
+.search-filters {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 1.2rem 2rem;
+    background: var(--secondary);
+    border-radius: 15px;
+}
+
+.search-bar {
+    position: relative;
+    flex: 1;
+    max-width: 650px;
+}
+
+/* Ajuste del espaciado de los tabs */
+.personal-tabs {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 3.5rem;
+    padding: 0.5rem 0;
+}
+
+/* Ajuste del botón nuevo */
+.add-btn {
+    padding: 0.6rem 1.4rem;
+    margin-left: 2rem;
+    border-radius: 8px;
+}
+
+/* Espaciado después de la barra de administrador */
+.admin-top-bar {
+    margin-bottom: 4.5rem;  /* Aumentado el margen inferior */
+    padding-bottom: 1.5rem;  /* Aumentado el padding inferior */
+}
+
+/* Ajustes de los títulos de sección */
+.panel-header {
+    margin-bottom: 2.5rem;
+    padding: 1rem 0;
+}
+
+.panel-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Ajuste de los controles de búsqueda */
+.search-filters {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Espaciado entre secciones principales */
+#admins-panel, #team-panel {
+    margin-top: 3rem;
+    padding-top: 1rem;
+}
+
+/* Ajuste del grid de tarjetas */
+.admins-grid, .team-grid {
+    margin-top: 2rem;
+    padding: 1rem;
+    gap: 2.5rem;
+}
+
+/* Ajuste de las tarjetas */
+.admin-card, .team-card {
+    margin-bottom: 1rem;
+    padding: 1.8rem;
+}
+
+/* Espaciado entre secciones de administradores y equipo */
+.personal-tabs {
+    margin: 2rem 0 3rem 0;
+    padding: 1rem;
+}
+
+/* Ajuste del botón de nuevo */
+.add-btn {
+    padding: 1rem 2rem;
+    margin-left: 1rem;
+}
+
+/* Ajuste de los filtros */
+.filter-select {
+    min-width: 200px;
+    margin-left: 1rem;
+}
+
+/* Tabs de navegación */
+/* Mejoras en los tabs */
+.personal-tabs {
+    background: white;
+    padding: 1rem;
+    border-radius: 15px;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(182, 102, 210, 0.1);
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: none;
+    background: var(--secondary);
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-btn.active {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.tab-btn:hover:not(.active) {
+    background: #E9D5F0;
+    transform: translateY(-2px);
+}
+
+/* Mejoras en las tarjetas */
+.admin-card, .team-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(182, 102, 210, 0.1);
+}
+
+.admin-card:hover, .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(182, 102, 210, 0.2);
+}
+
+.admin-header, .member-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.admin-avatar, .member-image {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.admin-avatar img, .member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.admin-card:hover .admin-avatar img,
+.team-card:hover .member-image img {
+    transform: scale(1.1);
+}
+
+.status-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.status-badge.active {
+    background-color: #48BB78;
+}
+
+/* Grids mejorados */
+.admins-grid, .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* Animaciones para las acciones */
+.admin-actions, .member-actions {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+}
+
+.admin-card:hover .admin-actions,
+.team-card:hover .member-actions {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.action-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid rgba(182, 102, 210, 0.2);
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Especialidades y badges */
+.member-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.member-specialties span {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    background: var(--secondary);
+    color: var(--primary);
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.member-specialties span:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Animación de entrada */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-card, .team-card {
+    animation: cardEntrance 0.5s ease forwards;
+}
+
+/* Panel Header y botón nuevo administrador */
+/* Panel Header mejorado */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  /* Alineación con la línea decorativa del título */
+    margin-bottom: 3rem;
+    padding: 0;
+}
+
+/* Botón nuevo administrador rediseñado */
+.add-btn {
+    padding: 0.7rem 1.5rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transform: translateY(-5px);  /* Alineación con el título */
+    box-shadow: 0 4px 15px rgba(182, 102, 210, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+}
+
+.add-btn i {
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+}
+
+.add-btn:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    transform: translateY(-7px);
+    box-shadow: 0 6px 20px rgba(182, 102, 210, 0.3);
+}
+
+.add-btn:hover i {
+    transform: rotate(90deg);
+}
+
+.add-btn:active {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 10px rgba(182, 102, 210, 0.2);
+}
+
+/* Barra de búsqueda y filtros mejorada */
+.search-filters {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: var(--secondary);
+    border-radius: 15px;
+}
+
+.search-bar {
+    position: relative;
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.6rem 1rem 0.6rem 2.2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(182, 102, 210, 0.1);
+    background: white;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+/* Select de filtros rediseñado */
+.filter-select {
+    padding: 0.6rem 2rem 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(182, 102, 210, 0.1);
+    background: white;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    min-width: 150px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.8rem) center;
+    transition: all 0.3s ease;
+}
+
+.filter-select:hover {
+    border-color: var(--primary);
+    box-shadow: 0 2px 6px rgba(182, 102, 210, 0.1);
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(182, 102, 210, 0.1);
+}
+
+/* Grid de Tarjetas */
+.admins-grid, .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Tarjetas de Administrador */
+/* Estilos específicos para las tarjetas de administradores */
+.admin-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid rgba(182, 102, 210, 0.15);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.admin-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 6px 15px rgba(182, 102, 210, 0.15);
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.admin-avatar {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-initial {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.admin-avatar img {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid var(--secondary);
+}
+
+.admin-main-info h3 {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.admin-role {
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.admin-contact {
+    padding: 0.5rem 0;
+    border-top: 1px solid rgba(182, 102, 210, 0.1);
+}
+
+.admin-contact p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0.4rem 0;
+}
+
+.admin-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(182, 102, 210, 0.1);
+}
+
+.action-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edit-btn {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.info-btn {
+    color: #3498db;
+    border-color: #3498db;
+}
+
+.delete-btn {
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+}
+
+.edit-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.info-btn:hover {
+    background: #3498db;
+    color: var(--white);
+}
+
+.delete-btn:hover {
+    background: var(--danger);
+    color: var(--white);
+}
+
+.status-toggle {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.status-toggle input {
+    display: none;
+}
+
+.slider {
+    padding: 0.5rem 1rem;
+    background: #E5E7EB;
+    border-radius: 20px;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.status-toggle input:checked + .slider {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Añadir al CSS existente */
+.panel {
+    /* Ajustes para mantener consistencia entre paneles */
+    .panel {
+        width: 100%;
+        min-height: 80vh;
+        padding: 2rem;
+        background: white;
+        border-radius: 25px;
+    }
+    
+    #team-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    #team-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    #team-panel .panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2.5rem;
+    }
+    
+    #team-panel .panel-header h2 {
+        /* Estilo del título en el encabezado del panel */
+        .panel-header h2 {
+            font-size: 2rem;              /* Tamaño de fuente grande */
+            font-weight: 600;             /* Peso de fuente semi-negrita */
+            color: var(--text-dark);      /* Color de texto oscuro */
+            margin: 0;                    /* Sin márgenes */
+        }
+        
+        /* Barra de búsqueda y filtros */
+        .search-filters {
+            width: 100%;                  /* Ocupa todo el ancho disponible */
+            display: flex;                /* Contenedor flexible */
+            align-items: center;          /* Alinea elementos verticalmente al centro */
+            gap: 1.5rem;                 /* Espacio entre elementos */
+            margin: 2rem 0;              /* Margen superior e inferior */
+            padding: 1.2rem 2rem;        /* Relleno interno */
+            background: var(--secondary); /* Fondo en color secundario */
+            border-radius: 15px;         /* Esquinas redondeadas */
+        }
+        
+        /* Cuadrícula para tarjetas de administradores y equipo */
+        .admins-grid,
+        .team-grid {
+            width: 100%;                  /* Ocupa todo el ancho disponible */
+            display: grid;                /* Diseño en cuadrícula */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas adaptativas */
+            gap: 2rem;                    /* Espacio entre tarjetas */
+            padding: 1rem 0;              /* Relleno superior e inferior */
+        }
+        
+        /* Botón de agregar nuevo */
+        .add-btn {
+            padding: 0.7rem 1.5rem;       /* Relleno interno */
+            border-radius: 12px;          /* Esquinas redondeadas */
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark)); /* Degradado */
+            color: white;                 /* Texto blanco */
+            font-weight: 500;             /* Peso de fuente medio */
+            border: none;                 /* Sin borde */
+            display: flex;                /* Contenedor flexible */
+            align-items: center;          /* Alinea elementos al centro */
+            gap: 0.5rem;                  /* Espacio entre icono y texto */
+            box-shadow: 0 4px 15px rgba(182, 102, 210, 0.2); /* Sombra suave */
+            transition: all 0.3s ease;    /* Animación suave */
+        }
+    }
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+}
+
+.panel.active {
+    position: relative;
+}
+
+.status-toggle input:checked + .slider {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Estilos específicos para las tarjetas del equipo veterinario */
+.team-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border: 1px solid rgba(182, 102, 210, 0.15);
+    box-shadow: 0 4px 12px rgba(182, 102, 210, 0.08);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 380px;
+}
+
+.team-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 20px rgba(182, 102, 210, 0.15);
+    transform: translateY(-5px);
+}
+
+.member-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.member-avatar {
+    position: relative;
+    width: 90px;
+    height: 90px;
+}
+
+.member-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 2px solid var(--secondary);
+}
+
+.member-info {
+    flex: 1;
+}
+
+.member-info h3 {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.member-role {
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.member-contact {
+    padding: 1rem 0;
+    border-top: 1px solid rgba(182, 102, 210, 0.1);
+}
+
+.member-contact p {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0.6rem 0;
+}
+
+.member-contact i {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.member-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(182, 102, 210, 0.1);
+}
+
+.member-actions .action-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.member-actions .edit-btn {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.member-actions .info-btn {
+    color: #3498db;
+    border-color: #3498db;
+}
+
+.member-actions .delete-btn {
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+.member-actions .action-btn:hover {
+    transform: translateY(-2px);
+}
+
+.member-actions .edit-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.member-actions .info-btn:hover {
+    background: #3498db;
+    color: white;
+}
+
+.member-actions .delete-btn:hover {
+    background: var(--danger);
+    color: white;
+}
+
+/* Estilos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Estilos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 3% auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+    animation: slideIn 0.3s ease;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 15px 15px 0 0;
+    border-bottom: 1px solid rgba(182, 102, 210, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.modal-header h3 {
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close:hover {
+    color: var(--primary);
+    background-color: rgba(156, 39, 176, 0.1);
+}
+
+.modal-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 1.5rem;
+    background: var(--white);
+    border-top: 1px solid rgba(182, 102, 210, 0.1);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Estilos de los botones */
+.cancel-btn, .submit-btn,
+.btn-cancel, .btn-save {
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn, .btn-cancel {
+    background: var(--secondary);
+    color: var(--text-dark);
+}
+
+.submit-btn, .btn-save {
+    background: var(--primary);
+    color: white;
+}
+
+.cancel-btn:hover, .btn-cancel:hover {
+    background: #E9D5F0;
+}
+
+.submit-btn:hover, .btn-save:hover {
+    background: var(--primary-dark);
+}
+
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    margin-bottom: 80px; /* Espacio para los botones fijos */
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(182, 102, 210, 0.2);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(182, 102, 210, 0.1);
+}
+
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+.toggle-password:hover {
+    color: var(--primary);
+}
+.role-select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(182, 102, 210, 0.2);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Profile photo button styling - improved version */
+#preview-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    margin: 10px auto;
+}
+
+.profile-photo-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+}
+
+.profile-photo-btn i {
+    font-size: 2.5em;
+    color: var(--primary);
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.profile-photo-btn:hover {
+    border-color: #666;
+}
+
+.profile-photo-btn:hover i {
+    transform: scale(1.1) rotate(5deg);
+    color: var(--primary-dark);
+}
+/* Photo size recommendation */
+.photo-size-info {
+    width: 100%;
+    padding: 12px 16px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    background: linear-gradient(to right, var(--secondary), #f8f0fc);
+    border-radius: 10px;
+    border: 1px solid rgba(182, 102, 210, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(182, 102, 210, 0.08);
+}
+
+.photo-size-info i {
+    color: var(--primary);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Professional description textarea styling */
+.professional-desc {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.professional-desc:focus {
+    border-color: #9c27b0;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.1);
+}
+.member-info-detail img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+
+}

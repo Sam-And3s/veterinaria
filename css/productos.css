@@ -1,0 +1,529 @@
+/* Sección héroe principal */
+.hero-section {
+    height: 600px;
+    /* Aplica un gradiente oscuro sobre la imagen de fondo para mejorar legibilidad del texto */
+    background: #DEF8EA; /* Cambiado al nuevo color de fondo */
+    background-size: cover;        /* Asegura que la imagen cubra toda la sección */
+    background-position: center;   /* Centra la imagen de fondo */
+    display: flex;                 /* Usa flexbox para alineación del contenido */
+    align-items: center;          /* Centra verticalmente el contenido */
+    padding: 0 5%;               /* Agrega espaciado horizontal */
+    margin-top: -80px;           /* Compensa la altura del navbar */
+}
+
+/* Estilo del título principal dentro del contenido del héroe */
+.hero-content h1 {
+    font-size: 3.5rem;         /* Tamaño de fuente grande para destacar el título */
+    margin-bottom: 1rem;       /* Espacio inferior para separar del siguiente elemento */
+    animation: fadeInUp 1s ease; /* Animación de entrada desde abajo con duración de 1 segundo */
+}
+
+/* Estilo base para enlaces de categoría */
+.category-link {
+    color: white;              /* Color de texto blanco para contraste con el fondo */
+    text-decoration: none;     /* Elimina el subrayado predeterminado del enlace */
+    font-weight: 500;         /* Peso de fuente medio para mejor legibilidad */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color al hover */
+}
+
+/* Efecto al pasar el cursor sobre el enlace de categoría */
+.category-link:hover {
+    color: #C084FC;           /* Cambia al color morado característico al pasar el cursor */
+}
+/* Sección de categorías principales */
+.top-categories {
+    padding: 4rem 5%;           /* Espaciado interior vertical y horizontal */
+    text-align: center;         /* Centra el contenido de texto */
+}
+
+/* Cuadrícula para mostrar las categorías */
+.categories-grid {
+    display: grid;                                /* Usa diseño de cuadrícula */
+    grid-template-columns: repeat(4, 1fr);        /* 4 columnas de igual tamaño */
+    gap: 2rem;                                    /* Espacio entre elementos */
+    margin-top: 2rem;                            /* Espacio superior */
+}
+
+/* Elemento individual de categoría */
+.category-item {
+    display: flex;              /* Usa flexbox para alineación vertical */
+    flex-direction: column;     /* Apila los elementos verticalmente */
+    align-items: center;        /* Centra los elementos horizontalmente */
+    gap: 1rem;                 /* Espacio entre elementos internos */
+    padding: 2rem;             /* Espaciado interior uniforme */
+    background: #DEF8EA;         /* Fondo blanco */
+    border-radius: 10px;       /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave para efectos */
+}
+
+/* Efecto hover para elementos de categoría */
+.category-item:hover {
+    transform: translateY(-5px);                    /* Eleva el elemento */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);    /* Sombra suave */
+}
+
+/* Ícono dentro del elemento de categoría */
+.category-item i {
+    font-size: 2.5rem;         /* Tamaño grande para el ícono */
+    color: #C084FC;            /* Color morado característico */
+}
+
+/* Sección de productos en tendencia */
+.trending-products {
+    padding: 4rem 5%;          /* Espaciado interior vertical y horizontal */
+}
+/* Encabezado de sección con controles de visualización */
+.section-header {
+    display: flex;                /* Usa flexbox para layout horizontal */
+    justify-content: space-between; /* Distribuye elementos en los extremos */
+    align-items: center;          /* Alinea elementos verticalmente al centro */
+    margin-bottom: 2rem;          /* Espacio inferior para separar del contenido */
+}
+
+/* Contenedor de controles de visualización */
+.view-controls {
+    display: flex;               /* Usa flexbox para alinear controles */
+    gap: 1rem;                  /* Espacio entre elementos de control */
+    align-items: center;         /* Alinea elementos verticalmente */
+}
+
+/* Botones de control del slider */
+.slider-controls button {
+    width: 40px;                /* Ancho fijo del botón */
+    height: 40px;               /* Altura fija del botón */
+    border: 2px solid #C084FC;  /* Borde morado característico */
+    background: transparent;     /* Fondo transparente */
+    border-radius: 50%;         /* Forma circular */
+    cursor: pointer;            /* Cursor tipo mano al pasar por encima */
+    transition: all 0.3s ease;  /* Transición suave para efectos */
+}
+
+/* Efecto hover para botones del slider */
+.slider-controls button:hover {
+    background: #C084FC;        /* Fondo morado al pasar el cursor */
+    color: white;               /* Texto blanco para contraste */
+}
+
+/* Configuración principal del encabezado de productos */
+.products-header {
+    min-height: 100vh;          /* Altura mínima igual al viewport */
+    width: 100%;                /* Ancho completo */
+    display: flex;              /* Layout flexible */
+    align-items: center;        /* Centrado vertical */
+    justify-content: space-between; /* Distribución espaciada entre elementos */
+    padding: 0 5%;             /* Espaciado horizontal */
+    padding-top: 2rem;          /* Espaciado interno superior adicional (conservado de la regla eliminada) */
+    margin-top: 0;             /* Reset del margen superior */
+    position: relative;         /* Para posicionamiento de elementos hijos */
+    overflow: hidden;          /* Oculta contenido desbordado */
+    background-color: #DEF8EA; /* Nuevo color de fondo */
+}
+
+/* Contenedor del contenido del encabezado */
+.header-content {
+    flex: 1;                   /* Toma espacio disponible */
+    max-width: 600px;          /* Ancho máximo para mejor legibilidad */
+}
+
+/* Estilo del título principal */
+.header-content h1 {
+    font-size: 64px;           /* Tamaño de fuente grande */
+    line-height: 1.1;          /* Altura de línea ajustada */
+    color: #333;               /* Color de texto oscuro */
+    margin-bottom: 20px;       /* Espacio inferior */
+    animation: fadeInLeft 0.8s ease; /* Animación de entrada desde la izquierda */
+}
+
+/* Estilo del párrafo descriptivo */
+.header-content p {
+    font-size: 18px;           /* Tamaño de fuente legible */
+    color: #666;               /* Color de texto gris */
+    margin: 20px 0;            /* Espaciado vertical */
+    animation: fadeInLeft 0.8s ease 0.2s; /* Animación con retraso */
+    opacity: 0;                /* Inicia invisible */
+    animation-fill-mode: forwards; /* Mantiene estado final de la animación */
+}
+
+/* Contenedor de la imagen del encabezado */
+.header-image {
+    flex: 1;                   /* Toma espacio disponible */
+    display: flex;             /* Layout flexible */
+    justify-content: flex-end; /* Alinea la imagen a la derecha */
+}
+
+/* Estilo de la imagen del encabezado */
+.header-image img {
+    max-width: 100%;           /* Ancho máximo responsivo */
+    height: auto;              /* Altura automática manteniendo proporción */
+}
+
+
+/* Animación para entrada de elementos desde la izquierda */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;            /* Comienza invisible */
+        transform: translateX(-30px); /* Comienza 30px a la izquierda */
+    }
+    to {
+        opacity: 1;            /* Termina completamente visible */
+        transform: translateX(0); /* Termina en su posición original */
+    }
+}
+
+/* Animación para entrada de elementos desde abajo */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;            /* Comienza invisible */
+        transform: translateY(20px); /* Comienza 20px abajo */
+    }
+    to {
+        opacity: 1;            /* Termina completamente visible */
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+/* Animación para deslizamiento continuo del carrusel */
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0); /* Posición inicial */
+    }
+    100% {
+        transform: translateX(calc(-300px * 4 - 8rem)); /* Desplazamiento total del carrusel */
+    }
+}
+
+/* Ajustes responsivos para pantallas medianas */
+@media screen and (max-width: 768px) {
+    /* Configuraciones para el encabezado en móviles */
+    .products-header {
+        flex-direction: column;     /* Apila elementos verticalmente */
+        padding: 100px 3% 50px;     /* Ajusta espaciado */
+        text-align: center;         /* Centra el texto */
+        height: auto;               /* Altura automática */
+    }
+
+    .header-content {
+        margin-bottom: 40px;        /* Espacio inferior */
+        padding-right: 0;           /* Elimina padding derecho */
+        order: 2;                   /* Cambia orden visual */
+    }
+
+    .header-image {
+        justify-content: center;    /* Centra la imagen */
+        order: 1;                   /* Mueve imagen arriba */
+        height: 300px;             /* Altura fija */
+    }
+
+    /* Ajustes para slides de categorías */
+    .category-slide {
+        min-width: 250px;          /* Ancho mínimo reducido */
+        height: 350px;             /* Altura ajustada */
+    }
+
+    .category-card {
+        padding: 1.5rem;           /* Reduce el padding */
+    }
+}
+
+/* Estilos para el título del encabezado */
+.header-content h1 {
+    font-size: 3.5rem;             /* Tamaño de fuente grande */
+    margin-bottom: 1rem;           /* Espacio inferior */
+    animation: fadeInLeft 0.8s ease; /* Animación de entrada */
+    color: #235610;
+}
+
+/* Estilos para el párrafo del encabezado */
+.header-content p {
+    font-size: 1.2rem;             /* Tamaño de fuente legible */
+    color: #161616;                   /* Color gris */
+    animation: fadeInLeft 0.8s ease 0.2s; /* Animación con retraso */
+    opacity: 0;                    /* Inicia invisible */
+    animation-fill-mode: forwards;  /* Mantiene estado final */
+}
+
+/* Estilos para la imagen del encabezado */
+.header-image {
+    width: 100%;                   /* Ancho completo */
+    height: 100%;                  /* Altura completa */
+    object-fit: cover;             /* Ajuste de imagen */
+    border-radius: 20px;           /* Bordes redondeados */
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media (max-width: 768px) {
+    .products-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        height: auto;
+        padding: 3rem 5%;
+    }
+.header-content {
+        padding-right: 0;
+        order: 2;
+    }
+.header-image {
+        order: 1;
+        height: 300px;
+    }
+}
+
+/* Animación para deslizamiento continuo */
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0); /* Posición inicial */
+    }
+    100% {
+        transform: translateX(calc(-300px * 4 - 8rem)); /* Desplazamiento total */
+    }
+}
+
+/* Ajustes responsivos para pantallas medianas */
+@media (max-width: 768px) {
+    .category-slide {
+        min-width: 250px;        /* Ancho mínimo reducido */
+        height: 350px;           /* Altura ajustada */
+    }
+}
+
+/* Sección principal de productos */
+.products-section {
+    padding: 4rem 2rem;             /* Espaciado interior */
+    max-width: 1200px;              /* Ancho máximo */
+    margin: 0 auto;                 /* Centrado horizontal */
+}
+
+/* Contenedor de filtros para productos */
+.filters {
+    display: flex;                /* Layout flexible horizontal */
+    justify-content: center;      /* Centra los filtros horizontalmente */
+    gap: 1rem;                   /* Espacio entre botones de filtro */
+    margin-bottom: 3rem;         /* Espacio inferior */
+    flex-wrap: wrap;             /* Permite que los filtros se ajusten en múltiples líneas */
+}
+
+/* Botones de filtrado */
+.filter-btn {
+    padding: 0.8rem 1.5rem;      /* Espaciado interno */
+    border: 2px solid #7DD181;   /* Borde morado característico */
+    background: #DEF8EA;      /* Fondo transparente */
+    color: #235610;                 /* Color de texto oscuro */
+    border-radius: 25px;         /* Bordes redondeados */
+    cursor: pointer;             /* Cursor tipo mano */
+    transition: all 0.3s ease;   /* Transición suave */
+}
+
+/* Estados activo y hover de botones de filtro */
+.filter-btn.active,
+.filter-btn:hover {
+    background: #235610;         /* Fondo morado al activar o pasar el cursor */
+    color: #DEF8EA;                /* Texto blanco para contraste */
+}
+
+/* Cuadrícula de productos */
+.products-grid {
+    margin-top: 2vw;
+    display: grid;               /* Layout tipo cuadrícula */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Columnas responsivas */
+    gap: 2rem;                  /* Espacio entre productos */
+    margin-bottom: 3rem;        /* Espacio inferior */
+}
+
+/* Tarjeta de producto individual */
+.product-card {
+    background: #DEF8EA;              /* Fondo blanco para la tarjeta */
+    border-radius: 15px;           /* Bordes redondeados */
+    overflow: hidden;              /* Oculta contenido desbordado */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    transition: all 0.3s ease;     /* Transición suave para efectos */
+}
+
+/* Efecto hover para tarjeta de producto */
+.product-card:hover {
+    transform: translateY(-5px);    /* Eleva la tarjeta */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Contenedor de imagen del producto */
+.product-image {
+    height: 250px;                 /* Altura fija */
+    overflow: hidden;              /* Oculta exceso de imagen */
+}
+
+/* Imagen del producto */
+.product-image img {
+    width: 100%;                   /* Ancho completo */
+    height: 100%;                  /* Altura completa */
+    object-fit: cover;             /* Ajuste de imagen */
+    transition: transform 0.5s ease; /* Transición para efecto zoom */
+}
+
+/* Efecto zoom en imagen al hover */
+.product-card:hover .product-image img {
+    transform: scale(1.1);         /* Aumenta tamaño de imagen */
+}
+
+/* Información del producto */
+.product-info {
+    padding: 1.5rem;               /* Espaciado interno */
+    text-align: center;            /* Texto centrado */
+}
+
+/* Nombre del producto */
+.product-name {
+    font-size: 1.1rem;             /* Tamaño de fuente */
+    color: #235610;                   /* Color de texto oscuro */
+    margin-bottom: 0.5rem;         /* Espacio inferior */
+}
+
+/* Precio del producto */
+.product-price {
+    color: #235610;                /* Color morado característico */
+    font-weight: 600;              /* Texto en negrita */
+    font-size: 1.25rem;            /* Tamaño de fuente */
+    margin-bottom: 1rem;           /* Espacio inferior */
+}
+
+/* Botón añadir al carrito */
+.add-to-cart {
+    width: 100%;                   /* Ancho completo */
+    padding: 0.8rem;               /* Espaciado interno */
+    background: #7DD181;           /* Fondo morado */
+    color: #161616;                  /* Texto blanco */
+    border: none;                  /* Sin borde */
+    border-radius: 8px;            /* Bordes redondeados */
+    cursor: pointer;               /* Cursor tipo mano */
+    transition: all 0.3s ease;     /* Transición suave */
+}
+
+/* Efecto hover en botón */
+.add-to-cart:hover {
+    background: #235610;           /* Morado más oscuro */
+}
+
+/* Contenedor de paginación */
+.pagination {
+    display: flex;                /* Layout flexible horizontal */
+    justify-content: center;      /* Centra los elementos horizontalmente */
+    align-items: center;          /* Centra los elementos verticalmente */
+    gap: 1rem;                   /* Espacio entre elementos */
+}
+
+/* Contenedor de números de página */
+.page-numbers {
+    display: flex;               /* Layout flexible horizontal */
+    gap: 0.5rem;                /* Espacio entre números */
+}
+
+/* Estilos comunes para botones y números de página */
+.page-btn {
+    width: 40px;                /* Ancho fijo */
+    height: 40px;               /* Altura fija */
+    border: 2px solid #7DD181;  /* Borde morado */
+    background: #DEF8EA;     /* Fondo transparente */
+    border-radius: 50%;         /* Forma circular */
+    display: flex;              /* Layout flexible */
+    align-items: center;        /* Centra verticalmente */
+    justify-content: center;    /* Centra horizontalmente */
+    cursor: pointer;            /* Cursor tipo mano */
+    transition: all 0.3s ease;  /* Transición suave */
+}
+
+/* Contenedor de números de página con botones a los lados */
+.page-numbers {
+    display: flex;               /* Layout flexible horizontal */
+    align-items: center;         /* Centra verticalmente */
+    gap: 0.5rem;                 /* Espacio entre elementos */
+}
+
+/* Estilos para números de página */
+.page-num {
+    width: 40px;                /* Ancho fijo */
+    height: 40px;               /* Altura fija */
+    border: 2px solid #7DD181;  /* Borde morado */
+    background: #DEF8EA;     /* Fondo transparente */
+    border-radius: 50%;         /* Forma circular */
+    display: flex;              /* Layout flexible */
+    align-items: center;        /* Centra verticalmente */
+    justify-content: center;    /* Centra horizontalmente */
+    cursor: pointer;            /* Cursor tipo mano */
+    transition: all 0.3s ease;  /* Transición suave */
+}
+
+/* Estados activo y hover de paginación */
+.page-num.active,
+.page-btn:hover,
+.page-num:hover {
+    background: #235610;        /* Fondo morado */
+    color: #DEF8EA;               /* Texto blanco */
+}
+
+/* Animación de entrada desde abajo */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;             /* Inicia invisible */
+        transform: translateY(20px); /* Inicia desplazado hacia abajo */
+    }
+    to {
+        opacity: 1;             /* Termina visible */
+        transform: translateY(0); /* Termina en posición original */
+    }
+}
+
+/* Ajustes responsivos para pantallas medianas */
+@media (max-width: 768px) {
+    .products-header {
+        height: 300px;          /* Altura reducida */
+    }
+    .header-content h1 {
+        font-size: 2.5rem;      /* Tamaño de fuente reducido */
+    }
+    .category-card {
+        padding: 1.5rem;        /* Padding reducido */
+    }
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 576px) {
+    .header-content h1 {
+        font-size: 2rem;        /* Tamaño de fuente más reducido */
+    }
+    .filters {
+        gap: 0.5rem;           /* Espacio reducido entre filtros */
+    }
+    .filter-btn {
+        padding: 0.6rem 1rem;   /* Padding reducido */
+        font-size: 0.9rem;      /* Tamaño de fuente reducido */
+    }
+}
+
+/* Título de sección */
+.section-title {
+    text-align: center;        /* Texto centrado */
+    font-size: 2.5rem;         /* Tamaño de fuente grande */
+    color: #235610;               /* Color de texto oscuro */
+    margin-bottom: 3rem;       /* Espacio inferior */
+    font-family: 'Poppins', sans-serif; /* Fuente personalizada */
+    position: relative;        /* Para el pseudo-elemento */
+}
+
+/* Ajuste de carrusel dentro de sección */
+.categories-carousel {
+    padding: 0;               /* Elimina el padding */
+}
+
+.pagination-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 20px;
+}

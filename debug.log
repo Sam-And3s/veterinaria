@@ -1,0 +1,814 @@
+Array
+(
+    [cliente] => Array
+        (
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 2
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 35
+                    [name] => sdas
+                    [price] => 44
+                    [image] => ../assets/products/product_68070ff8d6dd1.jfif
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 70
+)
+Array
+(
+    [cliente] => Array
+        (
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 2
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 22338
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 2
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 35
+                    [name] => sdas
+                    [price] => 44
+                    [image] => ../assets/products/product_68070ff8d6dd1.jfif
+                    [quantity] => 1
+                )
+
+            [3] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 22382
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 2
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 42
+                    [name] => hola
+                    [price] => 222
+                    [image] => ../assets/products/product_6807cd410baaa.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 38
+                    [name] => sdasf
+                    [price] => 24
+                    [image] => ../assets/products/product_6807101d97f84.png
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+            [3] => Array
+                (
+                    [productId] => 35
+                    [name] => sdas
+                    [price] => 44
+                    [image] => ../assets/products/product_68070ff8d6dd1.jfif
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 313
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 2
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 42
+                    [name] => hola
+                    [price] => 222
+                    [image] => ../assets/products/product_6807cd410baaa.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 38
+                    [name] => sdasf
+                    [price] => 24
+                    [image] => ../assets/products/product_6807101d97f84.png
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+            [3] => Array
+                (
+                    [productId] => 35
+                    [name] => sdas
+                    [price] => 44
+                    [image] => ../assets/products/product_68070ff8d6dd1.jfif
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 313
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 2
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 35
+                    [name] => sdas
+                    [price] => 44
+                    [image] => ../assets/products/product_68070ff8d6dd1.jfif
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 44
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 22338
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 22338
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 22338
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [id] => 1105463040
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 3
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 66939
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [id] => 1105463040
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 22315
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [id] => 1105463040
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 3
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 66939
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [id] => 1105463040
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 35
+                    [name] => sdas
+                    [price] => 44
+                    [image] => ../assets/products/product_68070ff8d6dd1.jfif
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 70
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [id] => 1105463040
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 22338
+)
+Datos incompletos o incorrectos
+Array
+(
+    [cliente] => Array
+        (
+            [id] => 1105463040
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 22338
+)
+userId recibido: 1105463040
+Array
+(
+    [cliente] => Array
+        (
+            [id] => 1105463040
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 22315
+)
+userId recibido: 1105463040
+Array
+(
+    [cliente] => Array
+        (
+            [id] => 1105463040
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 22338
+)
+userId recibido: 1105463040
+Unknown column 'total' in 'field list'Array
+(
+    [cliente] => Array
+        (
+            [id] => 1105463040
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 43
+                    [name] => holasdampodmasoi
+                    [price] => 22312
+                    [image] => ../assets/products/product_6807cd522ab1c.jpeg
+                    [quantity] => 1
+                )
+
+            [1] => Array
+                (
+                    [productId] => 39
+                    [name] => sda
+                    [price] => 3
+                    [image] => ../assets/products/product_680710266f0c7.png
+                    [quantity] => 1
+                )
+
+            [2] => Array
+                (
+                    [productId] => 40
+                    [name] => 523
+                    [price] => 23
+                    [image] => ../assets/products/product_6807102f8c7a6.jpeg
+                    [quantity] => 1
+                )
+
+            [3] => Array
+                (
+                    [productId] => 35
+                    [name] => sdas
+                    [price] => 44
+                    [image] => ../assets/products/product_68070ff8d6dd1.jfif
+                    [quantity] => 1
+                )
+
+        )
+
+    [total] => 22382
+)
+userId recibido: 1105463040
+Column 'subtotal' cannot be nullArray
+(
+    [cliente] => Array
+        (
+            [id] => 1105463040
+            [nombre] => RodriySamy
+            [direccion] => Mz 29 Cs 3
+            [telefono] => 3197880722
+            [correo] => RodriSamy@gmail.com
+        )
+
+    [productos] => Array
+        (
+            [0] => Array
+                (
+                    [productId] => 35
+                    [quantity] => 1
+                    [subtotal] => 44
+                )
+
+            [1] => Array
+                (
+                    [productId] => 40
+                    [quantity] => 1
+                    [subtotal] => 23
+                )
+
+        )
+
+    [total] => 67
+)
+userId recibido: 1105463040
